@@ -15,7 +15,12 @@ left:50%;
 top:50%;
 margin-left:-400px; /* -1/2 width */
 margin-top:-400px; /* -1/2 height */
+<<<<<<< HEAD
 text-align: center;
+=======
+text-align: center;	
+	
+>>>>>>> b603fe9be3ea068a4508aa80eca242cfab058d28
 }
 
 table {
