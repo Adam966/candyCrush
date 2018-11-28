@@ -57,12 +57,18 @@ function getPos(x, y) {
     pos.push(x);
     pos.push(y);
     console.log(pos);
-    changePos();
+	if(pos.length == 4)
+	{
+		console.log("Start change pos");
+		changePos();
+	}
+    
   }
 }
 
 function changePos() {
-  if (pos.length == 4) {
+if ((pos[0] == pos[2] && (pos[1] == pos[3]+1 || pos[1] == pos[3]-1 || pos[1] == pos[3])) || (pos[0] == pos[2]+1 && pos[1] == pos[3]) || (pos[0] == pos[2]-1 && pos[1] == pos[3]))
+  {
     let temp = pos[0];
     pos[0] = pos[2];
     pos[2] = temp;
@@ -73,6 +79,7 @@ function changePos() {
     console.log(pos);
     drawBoard(pos);
   }
+  else{pos.length = 0;}
 }
 
 function drawBoard(pos) {
