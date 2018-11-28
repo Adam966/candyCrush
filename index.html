@@ -6,7 +6,7 @@
 <!-- CSS prepojenie-->
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <!-- JS prepojenie-->
-
+<script type="text/javascript" src="js/app.js"></script>
 <!-- jQuery prepojenie-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -94,11 +94,25 @@
       <td><img name="elm" src="img/empty.png" onclick="getPos(7, 7)"></td>
     </tr>
   </table>
-  <button type="submit" name="button" onclick="start()">Reset</button>
- </div>
- <div class="score">
 
  </div>
- <script type="text/javascript" src="js/app.js"></script>
+ 
+ <div id="scoreWrapper">
+ 	<div id="scoreImage"></div>
+    
+ 	<div id="scoreBox">
+    	
+        <div id="progressWrapper">
+ 	 	<div id="progress"></div>
+		</div>
+        
+        <div id="scoreMain"> Score </div>
+            
+    	<button type="submit" class="resetButton" name="button" onclick="start()">Reset</button></div>
+        
+        
+ 	</div>
+ </div>
+
 </body>
 </html>

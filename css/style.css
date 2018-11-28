@@ -3,8 +3,7 @@
 
 body,html {
 
-width:100%;	
-margin:auto;
+margin-top:0;
 background:url(../img/bkg.png) no-repeat center center fixed; 
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -16,33 +15,31 @@ background-size: cover;
 #tableBox {
 
 /*border:1px solid red;*/
-background:red;
 text-align: center;	
 background:url(../img/bkgForTable.png) center;
 background-repeat: no-repeat;
 background-size: cover;
 width:1300px;
 height:1000px;
+margin:auto;
 position:fixed;
-left:50%;
-top:50%;
-margin-left:-650px; /* -1/2 width */
-margin-top:-500px; /* -1/2 height */
-	
+left: 0;
+right: 0;
+
 }
 
 table {
 
 border-collapse: collapse;
 border-style: hidden;
-width:800px;
-height:800px;
+width:700px;
+height:700px;
 table-layout: fixed;
-position:fixed;
+position:relative;
 left:50%;
 top:50%;
-margin-left:-400px; /* -1/2 width */
-margin-top:-400px; /* -1/2 height */
+margin-left:-350px; /* -1/2 width */
+margin-top:-350px; /* -1/2 height */
 	
 }
 
@@ -54,22 +51,75 @@ border: 1px black solid ;
   
 }
 
-#StartBox {
+#scoreWrapper {
 
-display: flex;
-justify-content: center;
-position:fixed;
-right:0;
-bottom:0;	
-background:red;
-height:100px;
-width:300px;	
+width:200px;
+height:300px;
+/*border:1px solid  yellow;*/
+top:0;
+float:right;
 	
 }
 
-.startButton {
+#scoreImage {
+	
+width:200px;
+height:100px;
+/*border:1px solid blue;*/
+background:url(../img/scoreIMG1.png) center;
+background-repeat: no-repeat;
+background-size: cover;
+	
+}
 
-height:100px; 
-width:100px; 
+#scoreBox {
 
+width:200px;
+height:200px;
+/*border:1px solid blue;*/
+background:url(../img/scoreIMG2.png) center;
+background-repeat: no-repeat;
+background-size:200px 230px;
+padding-top:30px;	
+	
+}
+
+.resetButton {
+	
+margin:0 auto;
+height:50px; 
+width:70%; 
+display:block;	
+margin-top:20px;
+	
+}
+
+
+#progressWrapper {
+	
+width: 80%;
+height: 30px;
+margin:auto;
+background-color: #ddd;
+  
+}
+
+#progress {
+	
+background-color: #4CAF50;
+width:10px;
+height:30px;
+  
+}
+
+#scoreMain {
+
+width:80%;
+height:30px;
+background:white;
+margin:auto;
+display:block;	
+margin-top:20px;
+text-align:center;	
+	
 }
