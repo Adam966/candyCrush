@@ -3,29 +3,73 @@
 
 body,html {
 
-width:100%;
+width:100%;	
 margin:auto;
-
+background:url(../img/bkg.png) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+	
 }
 
 #tableBox {
 
-position:absolute;
+/*border:1px solid red;*/
+background:red;
+text-align: center;	
+background:url(../img/bkgForTable.png) center;
+background-repeat: no-repeat;
+background-size: cover;
+width:1300px;
+height:1000px;
+position:fixed;
 left:50%;
 top:50%;
-margin-left:-400px; /* -1/2 width */
-margin-top:-400px; /* -1/2 height */
-<<<<<<< HEAD
-text-align: center;
-=======
-text-align: center;	
+margin-left:-650px; /* -1/2 width */
+margin-top:-500px; /* -1/2 height */
 	
->>>>>>> b603fe9be3ea068a4508aa80eca242cfab058d28
 }
 
 table {
 
-height:800px;
+border-collapse: collapse;
+border-style: hidden;
 width:800px;
+height:800px;
+table-layout: fixed;
+position:fixed;
+left:50%;
+top:50%;
+margin-left:-400px; /* -1/2 width */
+margin-top:-400px; /* -1/2 height */
+	
+}
+
+td {
+
+background:#CCC;
+opacity:0.2;
+border: 1px black solid ;
+  
+}
+
+#StartBox {
+
+display: flex;
+justify-content: center;
+position:fixed;
+right:0;
+bottom:0;	
+background:red;
+height:100px;
+width:300px;	
+	
+}
+
+.startButton {
+
+height:100px; 
+width:100px; 
 
 }
