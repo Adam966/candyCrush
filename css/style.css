@@ -9,6 +9,7 @@ background:url(../img/bkg.png) no-repeat center center fixed;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
+
 	
 }
 
@@ -31,11 +32,10 @@ right: 0;
 table {
 
 border-collapse: collapse;
-border-style: hidden;
 width:700px;
 height:700px;
 table-layout: fixed;
-position:relative;
+position:fixed;
 left:50%;
 top:50%;
 margin-left:-350px; /* -1/2 width */
@@ -45,11 +45,18 @@ margin-top:-350px; /* -1/2 height */
 
 td {
 
-background:#CCC;
-opacity:0.2;
-border: 1px black solid ;
+border-radius:20px;
+/*border: 1px black solid ;*/
   
 }
+
+td:hover {
+
+background-color:rgba(204,204,204,0.3);
+	
+	
+}
+
 
 #scoreWrapper {
 
@@ -94,7 +101,6 @@ margin-top:20px;
 	
 }
 
-
 #progressWrapper {
 	
 width: 80%;
@@ -122,4 +128,94 @@ display:block;
 margin-top:20px;
 text-align:center;	
 	
+}
+
+@media  screen and (max-width: 1440px) {
+
+#tableBox {
+
+text-align: center;	
+background:url(../img/bkgForTable.png) center;
+background-repeat: no-repeat;
+background-size: cover;
+width:1170px;
+height:900px;
+margin:auto;
+position:fixed;
+left: 0;
+right: 0;
+
+}
+
+#scoreWrapper {
+
+width:130px;
+height:250px;
+top:0;
+right:0;
+position:fixed;
+	
+}
+
+#scoreImage {
+	
+width:130px;
+height:100px;
+background:url(../img/scoreIMG1.png) center;
+background-repeat: no-repeat;
+background-size:150px 100px;
+	
+}
+
+#scoreBox {
+
+width:130px;
+height:120px;
+background:url(../img/scoreIMG2.png) center;
+background-repeat: no-repeat;
+background-size:135px 150px;
+	
+}
+
+.resetButton {
+	
+margin:0 auto;
+height:30px; 
+width:75%; 
+display:block;	
+margin-top:15px;
+	
+}
+
+#progressWrapper {
+	
+width: 80%;
+height:25px;
+margin:auto;
+background-color: #ddd;
+margin-top:-15px;
+  
+}
+
+#progress {
+	
+background-color: #4CAF50;
+width:10px;
+height:25px;
+  
+}
+
+#scoreMain {
+
+width:80%;
+height:25px;
+background:white;
+margin:auto;
+display:block;	
+text-align:center;	
+margin-top:15px;
+	
+}
+
+
 }
