@@ -25,11 +25,11 @@ function setupBoard(board) {
 
 function randomizer() {
 
-  const sign = "img/circle.png";
-  const rect = "img/rectangle.png";
-  const circ = "img/star.png";
-  const crs  = "img/triangle.png";
-  const str  = "img/cross.png";
+  const sign = "img/fruit1.png";
+  const rect = "img/fruit2.png";
+  const circ = "img/fruit3.png";
+  const crs  = "img/fruit4.png";
+  const str  = "img/fruit5.png";
 
   let rnd = Math.floor(Math.random() * 5) + 1;
 //  console.log(rnd);
