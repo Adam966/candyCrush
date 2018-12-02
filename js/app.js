@@ -25,11 +25,11 @@ function setupBoard(board) {
 
 function randomizer() {
 
-  const sign = "img/circle.png";
-  const rect = "img/rectangle.png";
-  const circ = "img/star.png";
-  const crs  = "img/triangle.png";
-  const str  = "img/cross.png";
+  const sign = "img/fruit1.png";
+  const rect = "img/fruit2.png";
+  const circ = "img/fruit3.png";
+  const crs  = "img/fruit4.png";
+  const str  = "img/fruit5.png";
 
   let rnd = Math.floor(Math.random() * 5) + 1;
 //  console.log(rnd);
@@ -61,6 +61,7 @@ function getPos(x, y) {
 	{
 		console.log("Start change pos");
 		changePos();
+		validateAll();
 	}
     
   }
@@ -96,4 +97,122 @@ function drawBoard(pos) {
     }
   }
   pos.length = 0;
+}
+
+let foundLane = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+let foundColumn = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+let workArray = [0,0,0,0,0,0,0,0,0];
+let singlePoint = 0;
+let doublePoint = 0;
+
+function validateAll()
+{
+	console.log("Checking fruit1");
+	checkFruit(1);
+	//All fruit1 checked, move blocks, add points, check again
+	resetLane(foundLane);
+	console.log("Checking fruit2");
+	checkFruit(2);
+	//All fruit2 checked, move blocks, add points, check again
+	resetLane(foundLane);
+	console.log("Checking fruit3");
+	checkFruit(3);
+	//All fruit3 checked, move blocks, add points, check again
+	resetLane(foundLane);
+	console.log("Checking fruit4");
+	checkFruit(4);
+	//All fruit4 checked, move blocks, add points, check again
+	resetLane(foundLane);
+	console.log("Checking fruit5");
+	checkFruit(4);
+	//All fruit5 checked, move blocks, add points, check again
+		resetLane(foundLane);
+}
+function checkFruit(fruit)
+{
+    let start =0;
+	for (let k = 0; k < 8; k++)
+	{
+		console.log("kolo "+k);
+		fillWorkArray(start);
+		checkLane(workArray, fruit, k);
+		console.log("-----");
+		start+=8;
+	}
+}
+
+function checkLane(array, what, k)
+{
+	let last1 = 0;
+	let count = 0;
+    for (let i = 0; i < array.length; i++) 
+    {
+        if (array[i] === what) 
+        {
+            foundLane[k][i] = 1;
+            count++;
+        }
+        else
+        {
+           if(count<3)
+           {
+              for (let j=last1; j <= i; j++)
+              {
+                 foundLane[k][j] = 0;
+              }
+           }
+           if(count>2){last1=i;}
+           count=0;
+        }
+    }
+	for (let i = 0; i < array.length; i++)
+	{
+		console.log(foundLane[k][i]);
+	}
+}
+
+function checkColumn()
+{
+	
+}
+
+function fillWorkArray(start)
+{
+	let till = start+7;
+	let count=0;
+	for(start; start<=till; start++)
+	{
+		let temp = document.getElementById('elm'+start).getAttribute('src');
+		if(temp == 'img/fruit1.png')
+		{
+			workArray[count] = 1;
+		}
+		else if(temp == 'img/fruit2.png')
+		{
+			workArray[count] = 2;
+		}
+		else if(temp == 'img/fruit3.png')
+		{
+			workArray[count] = 3;
+		}
+		else if(temp == 'img/fruit4.png')
+		{
+			workArray[count] = 4;
+		}
+		else if(temp == 'img/fruit5.png')
+		{
+			workArray[count] = 5;
+		}
+		count++;
+	}
+}
+function resetLane(lane)
+{
+ for (let i = 0; i < 8; i++)
+    {
+        for (let j = 0; j < 8; j++)
+	    {
+		    foundLane[i][j] = 0;
+	    }
+    }
 }
