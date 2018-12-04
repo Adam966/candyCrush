@@ -11,6 +11,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body onload="start()">
+  <div class="bkg1">
+  
   <audio id="song">
 	  <source src="jungle.mp3" type="audio/mp3">
 	  Your browser does not support the audio element.
@@ -112,7 +114,7 @@
 
      <div id="scoreBox">
 
-        <div id="scoreHalf1"></div>
+        <div id="scoreHalf1"> <button name="button" class="soundButton" onclick="checkAudio()"></button> </div>
 
         <div id="scoreHalf2">
 
@@ -133,7 +135,7 @@
                     <div id="scoreMain"> Score </div>
 
                       <button type="submit" class="resetButton" onclick="reset()">Reset</button>
-                      <button name="button" onclick="checkAudio()">Music</button>
+                     
                     </div>
                 </div>
 

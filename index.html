@@ -14,7 +14,7 @@
 
 <body onLoad="modal()">
 	<audio id="song">
-	  <source src="jungle.mp3" type="audio/mp3">
+	  <source src="jungle.mp3"type="audio/mp3">
 	  Your browser does not support the audio element.
 	</audio>
 <div id="WrapperCenter">
@@ -36,13 +36,17 @@
       <!-- Rules content -->
       <div class="modal-content">
         <span class="close">×</span>
-        <p>rules</p>
+       	<div class="imageWrapper"><img src="img/fruit1.png" alt="fruit1" title="fruit1"><div class="imageText">Points</div></div>
+        <div class="imageWrapper"><img src="img/fruit2.png" alt="fruit2" title="fruit2"><div class="imageText">Points</div></div>
+        <div class="imageWrapper"><img src="img/fruit3.png" alt="fruit3" title="fruit3"><div class="imageText">Points</div></div>
+        <div class="imageWrapper"><img src="img/fruit4.png" alt="fruit4" title="fruit4"><div class="imageText">Points</div></div>
+        <div class="imageWrapper"><img src="img/fruit5.png" alt="fruit5" title="fruit5"><div class="imageText">Points</div></div>
       </div>
 
     </div>
 
 </div>
-<button name="button" onclick="checkAudio()">Music</button>
+<button name="button" class="soundButton" onclick="checkAudio()"></button>
 
 </body>
 </html>
