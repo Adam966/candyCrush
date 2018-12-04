@@ -2,18 +2,37 @@ let pos = new Array();
 let board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
 let music = false;
 
+//Start function run when game is started
 function start() {
-
-
   setupBoard(board);
-  document.getElementById("scoreMain").innerHTML = "0";
+  timer();
   console.log(board);
+
 }
 
+//when is game over reset function go to the menu page
 function reset() {
   window.location.href = 'index.html';
 }
 
+//timer start
+function timer() {
+  let time = document.getElementById("progress");
+  let width = 0;
+  let interval = setInterval(frame, 1);
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(interval);
+    }
+    else {
+      width+=0.0010;
+      time.style.width = width + '%';
+    }
+  }
+}
+
+//on/off audio
 function checkAudio() {
   let song = document.getElementById("song");
 
@@ -27,6 +46,7 @@ function checkAudio() {
   }
 }
 
+//render the board with random symbols
 function setupBoard(board) {
   let index = 0;
   for (var i = 0; i < board.length; i++) {
@@ -41,6 +61,7 @@ function setupBoard(board) {
   }
 }
 
+//choose random symbols for setupBoard
 function randomizer() {
 
   const sign = "img/fruit1.png";
@@ -70,6 +91,7 @@ function randomizer() {
   }
 }
 
+//get position of clicked element on board
 function getPos(x, y) {
   if (pos.length < 4) {
     pos.push(x);
@@ -84,6 +106,7 @@ function getPos(x, y) {
   }
 }
 
+//when second position is only one away form first position draw with changed symbols board
 function changePos() {
 if ((pos[0] == pos[2] && (pos[1] == pos[3]+1 || pos[1] == pos[3]-1 || pos[1] == pos[3])) || (pos[0] == pos[2]+1 && pos[1] == pos[3]) || (pos[0] == pos[2]-1 && pos[1] == pos[3]))
   {
