@@ -7,25 +7,29 @@
 <link rel="stylesheet" href="css/styleIndex.css" type="text/css">
 <!-- JS prepojenie-->
 <script type="text/javascript" src="js/styleScript.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 <!-- jQuery prepojenie-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body onLoad="modal()">
-
+	<audio id="song">
+	  <source src="jungle.mp3" type="audio/mp3">
+	  Your browser does not support the audio element.
+	</audio>
 <div id="WrapperCenter">
 
 	<div id="mainLogo">
 	<div class="text">Logo</div>
 	</div>
-    
+
 	<div id="centerButtons">
-    
+
     <input type="button" id="playButton" value="Play">
     <input type="button" id="rulesButton" value="Rules">
-    
+
     </div>
-    
+
     <!-- The Modal Rules -->
     <div id="rulesModal" class="modalBkg">
 
@@ -36,8 +40,9 @@
       </div>
 
     </div>
-    
+
 </div>
+<button name="button" onclick="checkAudio()">Music</button>
 
 </body>
 </html>

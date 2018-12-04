@@ -1,5 +1,6 @@
 let pos = new Array();
 let board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+let music = false;
 
 function start() {
 
@@ -7,6 +8,23 @@ function start() {
   setupBoard(board);
   document.getElementById("scoreMain").innerHTML = "0";
   console.log(board);
+}
+
+function reset() {
+  window.location.href = 'index.html';
+}
+
+function checkAudio() {
+  let song = document.getElementById("song");
+
+  if (!music) {
+    song.play();
+    music=true;
+  }
+  else {
+    song.pause();
+    music=false;
+  }
 }
 
 function setupBoard(board) {
@@ -62,7 +80,7 @@ function getPos(x, y) {
 		console.log("Start change pos");
 		changePos();
 	}
-    
+
   }
 }
 
@@ -144,9 +162,9 @@ function checkLane(array, what, k)
 {
 	let last1 = 0;
 	let count = 0;
-    for (let i = 0; i < array.length; i++) 
+    for (let i = 0; i < array.length; i++)
     {
-        if (array[i] === what) 
+        if (array[i] === what)
         {
             foundLane[k][i] = 1;
             count++;
@@ -172,7 +190,7 @@ function checkLane(array, what, k)
 
 function checkColumn()
 {
-	
+
 }
 
 function fillWorkArray(start)

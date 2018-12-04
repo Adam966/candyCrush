@@ -11,15 +11,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body onload="start()">
-
+  <audio id="song">
+	  <source src="jungle.mp3" type="audio/mp3">
+	  Your browser does not support the audio element.
+	</audio>
   <div id="leftBox"></div>
 
   <div id="centerBox">
-    
+
       <div id="centerWrapper">
-      
+
       	<div id="tableBox">
-      
+
         <table>
         <tr>
           <td><img name="elm" id="elm0" src="img/empty.png" onclick="getPos(0, 0)"></td>
@@ -102,41 +105,42 @@
           <td><img name="elm" id="elm63" src="img/empty.png" onclick="getPos(7, 7)"></td>
         </tr>
       </table>
-      
+
       </div>
 
      </div>
-     
+
      <div id="scoreBox">
 
         <div id="scoreHalf1"></div>
 
         <div id="scoreHalf2">
-        
+
         	<div id="scoreHalf3"></div>
-            
+
             <div id="scoreHalf4">
-            
+
                 <div id="scoreWrapper">
-               	
+
                 <div id="scoreUI">
-                
+
                 	<div id="progressWrapper">
                     	<div id="progress"></div>
                     </div>
-                    
-             
-                    
+
+
+
                     <div id="scoreMain"> Score </div>
-                            
-                    <button type="submit" class="resetButton" name="button" onclick="start()">Reset</button></div>   
-                
+
+                      <button type="submit" class="resetButton" onclick="reset()">Reset</button>
+                      <button name="button" onclick="checkAudio()">Music</button>
+                    </div>
                 </div>
-                 
+
               </div>
-              
+
            </div>
-           
+
         </div>
     </div>
  </div>

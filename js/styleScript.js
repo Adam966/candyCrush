@@ -1,12 +1,7 @@
-$(document).ready(function(){
-
-
-
-});
 
 
 function modal(){
-	
+
 // Get the modal
 let modalRules = document.getElementById('rulesModal');
 
@@ -37,5 +32,5 @@ window.onclick = function(event) {
 document.getElementById("playButton").onclick = function () {
         location.href = "game.html";
     };
-	
+
 }
