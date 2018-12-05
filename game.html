@@ -11,138 +11,132 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body onload="start()">
-  <div class="bkg1">
-  
-  <audio id="song">
-	  <source src="jungle.mp3" type="audio/mp3">
-	  Your browser does not support the audio element.
-	</audio>
+
   <div id="leftBox"></div>
 
   <div id="centerBox">
-
+    
       <div id="centerWrapper">
-
+      
       	<div id="tableBox">
-
+      
         <table>
         <tr>
-          <td><img name="elm" id="elm0" src="img/empty.png" onclick="getPos(0, 0)"></td>
-          <td><img name="elm" id="elm1" src="img/empty.png" onclick="getPos(0, 1)"></td>
-          <td><img name="elm" id="elm2" src="img/empty.png" onclick="getPos(0, 2)"></td>
-          <td><img name="elm" id="elm3" src="img/empty.png" onclick="getPos(0, 3)"></td>
-          <td><img name="elm" id="elm4" src="img/empty.png" onclick="getPos(0, 4)"></td>
-          <td><img name="elm" id="elm5" src="img/empty.png" onclick="getPos(0, 5)"></td>
-          <td><img name="elm" id="elm6" src="img/empty.png" onclick="getPos(0, 6)"></td>
-          <td><img name="elm" id="elm7" src="img/empty.png" onclick="getPos(0, 7)"></td>
+          <td><img name="elm" id="elm0" src="img/empty.png" onclick="getPos(0, 0, this.id)"></td>
+          <td><img name="elm" id="elm1" src="img/empty.png" onclick="getPos(0, 1, this.id)"></td>
+          <td><img name="elm" id="elm2" src="img/empty.png" onclick="getPos(0, 2, this.id)"></td>
+          <td><img name="elm" id="elm3" src="img/empty.png" onclick="getPos(0, 3, this.id)"></td>
+          <td><img name="elm" id="elm4" src="img/empty.png" onclick="getPos(0, 4, this.id)"></td>
+          <td><img name="elm" id="elm5" src="img/empty.png" onclick="getPos(0, 5, this.id)"></td>
+          <td><img name="elm" id="elm6" src="img/empty.png" onclick="getPos(0, 6, this.id)"></td>
+          <td><img name="elm" id="elm7" src="img/empty.png" onclick="getPos(0, 7, this.id)"></td>
         </tr>
         <tr>
-          <td><img name="elm" id="elm8" src="img/empty.png" onclick="getPos(1, 0)"></td>
-          <td><img name="elm" id="elm9" src="img/empty.png" onclick="getPos(1, 1)"></td>
-          <td><img name="elm" id="elm10" src="img/empty.png" onclick="getPos(1, 2)"></td>
-          <td><img name="elm" id="elm11" src="img/empty.png" onclick="getPos(1, 3)"></td>
-          <td><img name="elm" id="elm12" src="img/empty.png" onclick="getPos(1, 4)"></td>
-          <td><img name="elm" id="elm13" src="img/empty.png" onclick="getPos(1, 5)"></td>
-          <td><img name="elm" id="elm14" src="img/empty.png" onclick="getPos(1, 6)"></td>
-          <td><img name="elm" id="elm15" src="img/empty.png" onclick="getPos(1, 7)"></td>
+          <td><img name="elm" id="elm8" src="img/empty.png" onclick="getPos(1, 0, this.id)"></td>
+          <td><img name="elm" id="elm9" src="img/empty.png" onclick="getPos(1, 1, this.id)"></td>
+          <td><img name="elm" id="elm10" src="img/empty.png" onclick="getPos(1, 2, this.id)"></td>
+          <td><img name="elm" id="elm11" src="img/empty.png" onclick="getPos(1, 3, this.id)"></td>
+          <td><img name="elm" id="elm12" src="img/empty.png" onclick="getPos(1, 4, this.id)"></td>
+          <td><img name="elm" id="elm13" src="img/empty.png" onclick="getPos(1, 5, this.id)"></td>
+          <td><img name="elm" id="elm14" src="img/empty.png" onclick="getPos(1, 6, this.id)"></td>
+          <td><img name="elm" id="elm15" src="img/empty.png" onclick="getPos(1, 7, this.id)"></td>
         </tr>
         <tr>
-          <td><img name="elm" id="elm16" src="img/empty.png" onclick="getPos(2, 0)"></td>
-          <td><img name="elm" id="elm17" src="img/empty.png" onclick="getPos(2, 1)"></td>
-          <td><img name="elm" id="elm18" src="img/empty.png" onclick="getPos(2, 2)"></td>
-          <td><img name="elm" id="elm19" src="img/empty.png" onclick="getPos(2, 3)"></td>
-          <td><img name="elm" id="elm20" src="img/empty.png" onclick="getPos(2, 4)"></td>
-          <td><img name="elm" id="elm21" src="img/empty.png" onclick="getPos(2, 5)"></td>
-          <td><img name="elm" id="elm22" src="img/empty.png" onclick="getPos(2, 6)"></td>
-          <td><img name="elm" id="elm23" src="img/empty.png" onclick="getPos(2, 7)"></td>
+          <td><img name="elm" id="elm16" src="img/empty.png" onclick="getPos(2, 0, this.id)"></td>
+          <td><img name="elm" id="elm17" src="img/empty.png" onclick="getPos(2, 1, this.id)"></td>
+          <td><img name="elm" id="elm18" src="img/empty.png" onclick="getPos(2, 2, this.id)"></td>
+          <td><img name="elm" id="elm19" src="img/empty.png" onclick="getPos(2, 3, this.id)"></td>
+          <td><img name="elm" id="elm20" src="img/empty.png" onclick="getPos(2, 4, this.id)"></td>
+          <td><img name="elm" id="elm21" src="img/empty.png" onclick="getPos(2, 5, this.id)"></td>
+          <td><img name="elm" id="elm22" src="img/empty.png" onclick="getPos(2, 6, this.id)"></td>
+          <td><img name="elm" id="elm23" src="img/empty.png" onclick="getPos(2, 7, this.id)"></td>
         </tr>
         <tr>
-          <td><img name="elm" id="elm24" src="img/empty.png" onclick="getPos(3, 0)"></td>
-          <td><img name="elm" id="elm25" src="img/empty.png" onclick="getPos(3, 1)"></td>
-          <td><img name="elm" id="elm26" src="img/empty.png" onclick="getPos(3, 2)"></td>
-          <td><img name="elm" id="elm27" src="img/empty.png" onclick="getPos(3, 3)"></td>
-          <td><img name="elm" id="elm28" src="img/empty.png" onclick="getPos(3, 4)"></td>
-          <td><img name="elm" id="elm29" src="img/empty.png" onclick="getPos(3, 5)"></td>
-          <td><img name="elm" id="elm30" src="img/empty.png" onclick="getPos(3, 6)"></td>
-          <td><img name="elm" id="elm31" src="img/empty.png" onclick="getPos(3, 7)"></td>
+          <td><img name="elm" id="elm24" src="img/empty.png" onclick="getPos(3, 0, this.id)"></td>
+          <td><img name="elm" id="elm25" src="img/empty.png" onclick="getPos(3, 1, this.id)"></td>
+          <td><img name="elm" id="elm26" src="img/empty.png" onclick="getPos(3, 2, this.id)"></td>
+          <td><img name="elm" id="elm27" src="img/empty.png" onclick="getPos(3, 3, this.id)"></td>
+          <td><img name="elm" id="elm28" src="img/empty.png" onclick="getPos(3, 4, this.id)"></td>
+          <td><img name="elm" id="elm29" src="img/empty.png" onclick="getPos(3, 5, this.id)"></td>
+          <td><img name="elm" id="elm30" src="img/empty.png" onclick="getPos(3, 6, this.id)"></td>
+          <td><img name="elm" id="elm31" src="img/empty.png" onclick="getPos(3, 7, this.id)"></td>
         </tr>
         <tr>
-          <td><img name="elm" id="elm32" src="img/empty.png" onclick="getPos(4, 0)"></td>
-          <td><img name="elm" id="elm33" src="img/empty.png" onclick="getPos(4, 1)"></td>
-          <td><img name="elm" id="elm34" src="img/empty.png" onclick="getPos(4, 2)"></td>
-          <td><img name="elm" id="elm35" src="img/empty.png" onclick="getPos(4, 3)"></td>
-          <td><img name="elm" id="elm36" src="img/empty.png" onclick="getPos(4, 4)"></td>
-          <td><img name="elm" id="elm37" src="img/empty.png" onclick="getPos(4, 5)"></td>
-          <td><img name="elm" id="elm38" src="img/empty.png" onclick="getPos(4, 6)"></td>
-          <td><img name="elm" id="elm39" src="img/empty.png" onclick="getPos(4, 7)"></td>
+          <td><img name="elm" id="elm32" src="img/empty.png" onclick="getPos(4, 0, this.id)"></td>
+          <td><img name="elm" id="elm33" src="img/empty.png" onclick="getPos(4, 1, this.id)"></td>
+          <td><img name="elm" id="elm34" src="img/empty.png" onclick="getPos(4, 2, this.id)"></td>
+          <td><img name="elm" id="elm35" src="img/empty.png" onclick="getPos(4, 3, this.id)"></td>
+          <td><img name="elm" id="elm36" src="img/empty.png" onclick="getPos(4, 4, this.id)"></td>
+          <td><img name="elm" id="elm37" src="img/empty.png" onclick="getPos(4, 5, this.id)"></td>
+          <td><img name="elm" id="elm38" src="img/empty.png" onclick="getPos(4, 6, this.id)"></td>
+          <td><img name="elm" id="elm39" src="img/empty.png" onclick="getPos(4, 7, this.id)"></td>
         </tr>
         <tr>
-          <td><img name="elm" id="elm40" src="img/empty.png" onclick="getPos(5, 0)"></td>
-          <td><img name="elm" id="elm41" src="img/empty.png" onclick="getPos(5, 1)"></td>
-          <td><img name="elm" id="elm42" src="img/empty.png" onclick="getPos(5, 2)"></td>
-          <td><img name="elm" id="elm43" src="img/empty.png" onclick="getPos(5, 3)"></td>
-          <td><img name="elm" id="elm44" src="img/empty.png" onclick="getPos(5, 4)"></td>
-          <td><img name="elm" id="elm45" src="img/empty.png" onclick="getPos(5, 5)"></td>
-          <td><img name="elm" id="elm46" src="img/empty.png" onclick="getPos(5, 6)"></td>
-          <td><img name="elm" id="elm47" src="img/empty.png" onclick="getPos(5, 7)"></td>
+          <td><img name="elm" id="elm40" src="img/empty.png" onclick="getPos(5, 0, this.id)"></td>
+          <td><img name="elm" id="elm41" src="img/empty.png" onclick="getPos(5, 1, this.id)"></td>
+          <td><img name="elm" id="elm42" src="img/empty.png" onclick="getPos(5, 2, this.id)"></td>
+          <td><img name="elm" id="elm43" src="img/empty.png" onclick="getPos(5, 3, this.id)"></td>
+          <td><img name="elm" id="elm44" src="img/empty.png" onclick="getPos(5, 4, this.id)"></td>
+          <td><img name="elm" id="elm45" src="img/empty.png" onclick="getPos(5, 5, this.id)"></td>
+          <td><img name="elm" id="elm46" src="img/empty.png" onclick="getPos(5, 6, this.id)"></td>
+          <td><img name="elm" id="elm47" src="img/empty.png" onclick="getPos(5, 7, this.id)"></td>
         </tr>
         <tr>
-          <td><img name="elm" id="elm48" src="img/empty.png" onclick="getPos(6, 0)"></td>
-          <td><img name="elm" id="elm49" src="img/empty.png" onclick="getPos(6, 1)"></td>
-          <td><img name="elm" id="elm50" src="img/empty.png" onclick="getPos(6, 2)"></td>
-          <td><img name="elm" id="elm51" src="img/empty.png" onclick="getPos(6, 3)"></td>
-          <td><img name="elm" id="elm52" src="img/empty.png" onclick="getPos(6, 4)"></td>
-          <td><img name="elm" id="elm53" src="img/empty.png" onclick="getPos(6, 5)"></td>
-          <td><img name="elm" id="elm54" src="img/empty.png" onclick="getPos(6, 6)"></td>
-          <td><img name="elm" id="elm55" src="img/empty.png" onclick="getPos(6, 7)"></td>
+          <td><img name="elm" id="elm48" src="img/empty.png" onclick="getPos(6, 0, this.id)"></td>
+          <td><img name="elm" id="elm49" src="img/empty.png" onclick="getPos(6, 1, this.id)"></td>
+          <td><img name="elm" id="elm50" src="img/empty.png" onclick="getPos(6, 2, this.id)"></td>
+          <td><img name="elm" id="elm51" src="img/empty.png" onclick="getPos(6, 3, this.id)"></td>
+          <td><img name="elm" id="elm52" src="img/empty.png" onclick="getPos(6, 4, this.id)"></td>
+          <td><img name="elm" id="elm53" src="img/empty.png" onclick="getPos(6, 5, this.id)"></td>
+          <td><img name="elm" id="elm54" src="img/empty.png" onclick="getPos(6, 6, this.id)"></td>
+          <td><img name="elm" id="elm55" src="img/empty.png" onclick="getPos(6, 7, this.id)"></td>
         </tr>
         <tr>
-          <td><img name="elm" id="elm56" src="img/empty.png" onclick="getPos(7, 0)"></td>
-          <td><img name="elm" id="elm57" src="img/empty.png" onclick="getPos(7, 1)"></td>
-          <td><img name="elm" id="elm58" src="img/empty.png" onclick="getPos(7, 2)"></td>
-          <td><img name="elm" id="elm59" src="img/empty.png" onclick="getPos(7, 3)"></td>
-          <td><img name="elm" id="elm60" src="img/empty.png" onclick="getPos(7, 4)"></td>
-          <td><img name="elm" id="elm61" src="img/empty.png" onclick="getPos(7, 5)"></td>
-          <td><img name="elm" id="elm62" src="img/empty.png" onclick="getPos(7, 6)"></td>
-          <td><img name="elm" id="elm63" src="img/empty.png" onclick="getPos(7, 7)"></td>
+          <td><img name="elm" id="elm56" src="img/empty.png" onclick="getPos(7, 0, this.id)"></td>
+          <td><img name="elm" id="elm57" src="img/empty.png" onclick="getPos(7, 1, this.id)"></td>
+          <td><img name="elm" id="elm58" src="img/empty.png" onclick="getPos(7, 2, this.id)"></td>
+          <td><img name="elm" id="elm59" src="img/empty.png" onclick="getPos(7, 3, this.id)"></td>
+          <td><img name="elm" id="elm60" src="img/empty.png" onclick="getPos(7, 4, this.id)"></td>
+          <td><img name="elm" id="elm61" src="img/empty.png" onclick="getPos(7, 5, this.id)"></td>
+          <td><img name="elm" id="elm62" src="img/empty.png" onclick="getPos(7, 6, this.id)"></td>
+          <td><img name="elm" id="elm63" src="img/empty.png" onclick="getPos(7, 7, this.id)"></td>
         </tr>
       </table>
-
+      
       </div>
 
      </div>
-
+     
      <div id="scoreBox">
 
-        <div id="scoreHalf1"> <button name="button" class="soundButton" onclick="checkAudio()"></button> </div>
+        <div id="scoreHalf1"></div>
 
         <div id="scoreHalf2">
-
+        
         	<div id="scoreHalf3"></div>
-
+            
             <div id="scoreHalf4">
-
+            
                 <div id="scoreWrapper">
-
+               	
                 <div id="scoreUI">
-
+                
                 	<div id="progressWrapper">
                     	<div id="progress"></div>
                     </div>
-
-
-
+                    
+             
+                    
                     <div id="scoreMain"> Score </div>
-
-                      <button type="submit" class="resetButton" onclick="reset()">Reset</button>
-                     
-                    </div>
+                            
+                    <button type="submit" class="resetButton" name="button" onclick="start()">Reset</button></div>   
+                
                 </div>
-
+                 
               </div>
-
+              
            </div>
-
+           
         </div>
     </div>
  </div>
