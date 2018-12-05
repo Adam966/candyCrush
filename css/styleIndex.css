@@ -1,8 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-
 body,html {
 
 width:100%;
@@ -16,6 +14,11 @@ background-size: 400% 400%;
 -moz-animation: Gradient 15s ease infinite;
 animation: Gradient 15s ease infinite;
 
+}
+
+@font-face {
+    font-family: Lapsus;
+    src:url(../LapsusPro-Bold.otf);
 }
 
 @-webkit-keyframes Gradient {
@@ -104,10 +107,16 @@ top: 0; left: 0; bottom: 0; right: 0;
 	
 margin:auto;
 display:block;
-width:250px;	
-padding:15px 20px;
-margin-top:40px;
+margin-top:20px;
 cursor:pointer;	
+font-family:Lapsus;
+font-size:55px;
+width:150px;
+border: none;
+background:none;
+outline:none;
+transition: all 0.7s;
+color:#594830;
 	
 }
 
@@ -115,12 +124,57 @@ cursor:pointer;
 
 margin:auto;
 display:block;	
-width:250px;	
-padding:15px 20px;
 margin-top:20px;
 cursor:pointer;	
+font-family:Lapsus;
+font-size:55px;
+width:150px;
+border: none;
+background:none;
+outline:none;
+transition: all 0.7s;
+color:#594830;
 	
 }
+
+#playButton:hover {
+	-webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+ 	transform: scale(1.2);
+	color:#4F3E2A;
+	
+}
+
+#rulesButton:hover {
+	-webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+ 	transform: scale(1.2);
+	color:#4F3E2A;
+	
+}
+
+#soundButton {
+	
+float:Right;
+height:80px;
+width:80px;
+background:url(../img/soundON.png);
+border: none;
+outline:none;
+cursor:pointer;	
+transition: all 0.7s;
+	
+}
+
+#soundButton:hover {
+	
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+background:url(../img/soundHover.png);
+	
+}
+
 
 
 .modalBkg {
@@ -163,21 +217,6 @@ cursor:pointer;
     cursor: pointer;
 }
 
-
-.soundButton {
-	
-float:Right;
-height:80px;
-width:80px;
-background:url(../img/soundON.png);
-border: none;
-outline:none;
-cursor:pointer;	
-	
-}
-
-
-
 .imageWrapper {
 
 width:180px;
@@ -201,4 +240,5 @@ font-size:25px;
 margin-top:20px;
 	
 }
+
 

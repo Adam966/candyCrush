@@ -15,6 +15,11 @@ animation: Gradient 15s ease infinite;
 
 }
 
+@font-face {
+    font-family: Lapsus;
+    src:url(../LapsusPro-Bold.otf);
+}
+
 @-webkit-keyframes Gradient {
 	0% {
 		background-position: 0% 50%
@@ -182,13 +187,29 @@ margin-top:20px;
 
 }
 
-.resetButton {
+#resetButton {
 	
-margin:0 auto;
-height:50px; 
-width:70%; 
+margin:auto;
 display:block;	
 margin-top:20px;
+cursor:pointer;	
+font-family:Lapsus;
+font-size:55px;
+width:150px;
+border: none;
+background:none;
+outline:none;
+transition: all 0.7s;
+color:#586060;
+	
+}
+
+#resetButton:hover {
+	
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+color:#4A5656;
 	
 }
 
@@ -221,7 +242,8 @@ text-align:center;
 	
 }
 
-.soundButton {
+
+#soundButton {
 	
 float:Right;
 height:80px;
@@ -230,6 +252,16 @@ background:url(../img/soundON.png);
 border: none;
 outline:none;
 cursor:pointer;	
+transition: all 0.7s;
+	
+}
+
+#soundButton:hover {
+	
+-webkit-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+background:url(../img/soundHover.png);
 	
 }
 
