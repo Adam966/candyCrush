@@ -1,52 +1,15 @@
 let pos = new Array();
+let idTemp = new Array();
 let board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
-let music = false;
 
-//Start function run when game is started
 function start() {
+
+
   setupBoard(board);
-  timer();
+  document.getElementById("scoreMain").innerHTML = "0";
   console.log(board);
-
 }
 
-//when is game over reset function go to the menu page
-function reset() {
-  window.location.href = 'index.html';
-}
-
-//timer start
-function timer() {
-  let time = document.getElementById("progress");
-  let width = 0;
-  let interval = setInterval(frame, 1);
-
-  function frame() {
-    if (width >= 100) {
-      clearInterval(interval);
-    }
-    else {
-      width+=0.0010;
-      time.style.width = width + '%';
-    }
-  }
-}
-
-//on/off audio
-function checkAudio() {
-  let song = document.getElementById("song");
-
-  if (!music) {
-    song.play();
-    music=true;
-  }
-  else {
-    song.pause();
-    music=false;
-  }
-}
-
-//render the board with random symbols
 function setupBoard(board) {
   let index = 0;
   for (var i = 0; i < board.length; i++) {
@@ -61,7 +24,6 @@ function setupBoard(board) {
   }
 }
 
-//choose random symbols for setupBoard
 function randomizer() {
 
   const sign = "img/fruit1.png";
@@ -91,22 +53,203 @@ function randomizer() {
   }
 }
 
-//get position of clicked element on board
-function getPos(x, y) {
+let foundLane = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+let foundColumn = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
+let workArray = [0,0,0,0,0,0,0,0,0];
+
+let verified = [0,0,0,0,0,0,0,0,0];
+let fruitType1=0;
+let fruitType2=0;
+let singlePoint = 0;
+let doublePoint = 0;
+
+function getPos(x, y, id) {
   if (pos.length < 4) {
     pos.push(x);
     pos.push(y);
-    console.log(pos);
+	idTemp.push(id);
+    console.log("first "+pos);
+	console.log("ID= "+idTemp);
 	if(pos.length == 4)
 	{
 		console.log("Start change pos");
 		changePos();
-	}
+		
 
+		//verify();
+		setTimeout(verify, 300)
+
+			
+
+		//pos.length = 0;
+	}
   }
 }
 
-//when second position is only one away form first position draw with changed symbols board
+function verify()
+{
+		fruitType1 = getType(document.getElementById(idTemp[0]).getAttribute('src'));
+	    fruitType2 = getType(document.getElementById(idTemp[1]).getAttribute('src'));
+		let first = 0;
+		let second = 0;	
+        let third = 0;
+        let fourth = 0;	
+        let fifth = 0;
+        let sixth = 0;	
+		
+		if(pos[0] == pos[2])
+		{
+			fillWorkLane(pos[0]);
+
+			console.log("workarray "+workArray);
+			console.log("fruittype1 "+fruitType1);
+			console.log("fruittype2 "+fruitType2);
+			first = checkLane(workArray, fruitType1);
+			console.log("first " + first);
+			if(first == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND1");
+				resetArray(verified);
+				
+			}
+			resetArray(verified);
+			
+			second = checkLane(workArray, fruitType2);
+			console.log("second " + second);
+			if(second == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND2");
+				resetArray(verified);
+			}
+			resetArray(verified);
+			//check column 1
+			fillWorkColumn(pos[1]);
+			third = checkLane(workArray, fruitType1);
+			if(third == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND3");
+				resetArray(verified);
+			}
+			resetArray(verified);
+			
+			fourth = checkLane(workArray, fruitType2);
+			if(fourth == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND4");
+				resetArray(verified);
+			}
+			resetArray(verified);
+			//check column 2
+			fillWorkColumn(pos[3]);
+			fifth = checkLane(workArray, fruitType1);
+			if(fifth == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND5");
+				resetArray(verified);
+			}
+			resetArray(verified);
+			
+			sixth = checkLane(workArray, fruitType2);
+			if(sixth == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND6");
+				resetArray(verified);
+			}
+			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
+			{
+				console.log("NOTHIN FOUND");
+				changePos();
+				resetArray(verified);
+			}
+			resetArray(workArray);
+			idTemp = new Array();
+			pos.length = 0;
+		}
+		
+		if(pos[1] == pos[3] && pos[0] != pos[2])
+		{
+			fillWorkLane(pos[0]);
+			
+			first = checkLane(workArray, fruitType1);
+			console.log("first " + first);
+			if(first == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND1");
+				resetArray(verified);
+				
+			}
+			resetArray(verified);
+			
+			second = checkLane(workArray, fruitType2);
+			console.log("second " + second);
+			if(second == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND2");
+				resetArray(verified);
+			}
+			resetArray(verified);
+			
+			fillWorkLane(pos[2]);
+			
+			third = checkLane(workArray, fruitType1);
+			if(third == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND3");
+				resetArray(verified);
+			}
+			resetArray(verified);
+			
+			fourth = checkLane(workArray, fruitType2);
+			if(fourth == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND4");
+				resetArray(verified);
+			}
+			resetArray(verified);
+			//check column
+			fillWorkColumn(pos[1]);
+			
+			fifth = checkLane(workArray, fruitType1);
+			if(fifth == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND5");
+				resetArray(verified);
+			}
+			resetArray(verified);
+			
+			sixth = checkLane(workArray, fruitType2);
+			if(sixth == 1)
+			{
+				//do smthing with the items
+				console.log("FOUND6");
+				resetArray(verified);
+			}
+			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
+			{
+				console.log("NOTHIN FOUND");
+				changePos();
+				resetArray(verified);
+			}
+			resetArray(workArray);
+			idTemp = new Array();
+			pos.length = 0;
+		}
+		
+		
+}
+
+
 function changePos() {
 if ((pos[0] == pos[2] && (pos[1] == pos[3]+1 || pos[1] == pos[3]-1 || pos[1] == pos[3])) || (pos[0] == pos[2]+1 && pos[1] == pos[3]) || (pos[0] == pos[2]-1 && pos[1] == pos[3]))
   {
@@ -117,7 +260,6 @@ if ((pos[0] == pos[2] && (pos[1] == pos[3]+1 || pos[1] == pos[3]-1 || pos[1] == 
     temp = pos[1];
     pos[1] = pos[3];
     pos[3] = temp;
-    console.log(pos);
     drawBoard(pos);
   }
   else{pos.length = 0;}
@@ -136,60 +278,57 @@ function drawBoard(pos) {
       index++;
     }
   }
-  pos.length = 0;
 }
 
-let foundLane = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
-let foundColumn = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
-let workArray = [0,0,0,0,0,0,0,0,0];
-let singlePoint = 0;
-let doublePoint = 0;
-
-function validateAll()
+function fillWorkLane(xpos)
 {
-	console.log("Checking fruit1");
-	checkFruit(1);
-	//All fruit1 checked, move blocks, add points, check again
-	resetLane(foundLane);
-	console.log("Checking fruit2");
-	checkFruit(2);
-	//All fruit2 checked, move blocks, add points, check again
-	resetLane(foundLane);
-	console.log("Checking fruit3");
-	checkFruit(3);
-	//All fruit3 checked, move blocks, add points, check again
-	resetLane(foundLane);
-	console.log("Checking fruit4");
-	checkFruit(4);
-	//All fruit4 checked, move blocks, add points, check again
-	resetLane(foundLane);
-	console.log("Checking fruit5");
-	checkFruit(4);
-	//All fruit5 checked, move blocks, add points, check again
-		resetLane(foundLane);
-}
-function checkFruit(fruit)
-{
-    let start =0;
-	for (let k = 0; k < 8; k++)
-	{
-		console.log("kolo "+k);
-		fillWorkArray(start);
-		checkLane(workArray, fruit, k);
-		console.log("-----");
-		start+=8;
-	}
+	 for (let j = 0; j < 8; j++)
+	      {
+			  workArray[j]= getType(board[xpos][j]);
+	      }
 }
 
-function checkLane(array, what, k)
+function fillWorkColumn(xpos)
 {
+	for (let j = 0; j < 8; j++)
+	      {
+			  workArray[j]= getType(board[j][xpos]);
+	      }
+}
+
+function getType(fruit)
+{
+	 switch (fruit) 
+	     	  {
+                  case "img/fruit1.png":
+                     return 1;
+                     break;
+                  case "img/fruit2.png":
+                     return 2;
+                     break;
+                  case "img/fruit3.png":
+                     return 3;
+                     break;
+                  case "img/fruit4.png":
+                     return 4;
+			         break;
+                  case "img/fruit5.png":
+                     return 5;
+                     break;
+               }
+}
+
+
+function checkLane(array, what)
+{
+	console.log("checking type "+what);
 	let last1 = 0;
 	let count = 0;
-    for (let i = 0; i < array.length; i++)
+    for (let i = 0; i < array.length; i++) 
     {
-        if (array[i] === what)
+        if (array[i] === what) 
         {
-            foundLane[k][i] = 1;
+            verified[i] = 1;
             count++;
         }
         else
@@ -198,61 +337,43 @@ function checkLane(array, what, k)
            {
               for (let j=last1; j <= i; j++)
               {
-                 foundLane[k][j] = 0;
+                 verified[j] = 0;
               }
            }
            if(count>2){last1=i;}
            count=0;
         }
     }
-	for (let i = 0; i < array.length; i++)
+	for (i = 0; i < array.length; i++)
 	{
-		console.log(foundLane[k][i]);
+		if(verified[i] == 1)
+		{
+		   count++;
+		}
+	}
+	console.log(verified);
+	console.log("count "+count);
+	if(count >= 3)
+	{
+		console.log("return 1");
+		return 1;
+	}
+	else
+	{
+		console.log("return 0");
+		return 0;
 	}
 }
 
 function checkColumn()
 {
-
+	
 }
 
-function fillWorkArray(start)
+function resetArray(lane)
 {
-	let till = start+7;
-	let count=0;
-	for(start; start<=till; start++)
-	{
-		let temp = document.getElementById('elm'+start).getAttribute('src');
-		if(temp == 'img/fruit1.png')
-		{
-			workArray[count] = 1;
-		}
-		else if(temp == 'img/fruit2.png')
-		{
-			workArray[count] = 2;
-		}
-		else if(temp == 'img/fruit3.png')
-		{
-			workArray[count] = 3;
-		}
-		else if(temp == 'img/fruit4.png')
-		{
-			workArray[count] = 4;
-		}
-		else if(temp == 'img/fruit5.png')
-		{
-			workArray[count] = 5;
-		}
-		count++;
-	}
-}
-function resetLane(lane)
-{
- for (let i = 0; i < 8; i++)
+    for(let i = 0; i < lane.length; i++)
     {
-        for (let j = 0; j < 8; j++)
-	    {
-		    foundLane[i][j] = 0;
-	    }
+		lane[i] = 0;
     }
 }
