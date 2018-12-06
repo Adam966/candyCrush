@@ -191,7 +191,7 @@ margin-top:20px;
 	
 margin:auto;
 display:block;	
-margin-top:20px;
+margin-top:;
 cursor:pointer;	
 font-family:Lapsus;
 font-size:55px;
@@ -218,26 +218,38 @@ color:#4A5656;
 width: 80%;
 height: 30px;
 margin:auto;
-background-color: #ddd;
+background-color:#97A4A5;
 
 }
 
 #progress {
 	
-background-color: #4CAF50;
+background-color:rgba(255,255,255,1);
 width:10px;
 height:30px;
   
 }
 
+.scoreTitle {
+
+margin-top:10px;
+font-family:Lapsus;
+font-size:35px;
+color:white;
+text-align:center;	
+	
+}
+
 #scoreMain {
 
 width:80%;
-height:30px;
-background:white;
+/*border:1px solid red;*/
 margin:auto;
 display:block;	
-margin-top:20px;
+margin-top:;
+font-family:Lapsus;
+font-size:35px;
+color:white;
 text-align:center;	
 	
 }
