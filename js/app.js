@@ -26,6 +26,10 @@ function timer() {
   function frame() {
     if (width >= 100) {
       clearInterval(interval);
+	  $("#gameOverBkg").fadeIn("slow");
+	 /* let filterBlur='blur(5px)';
+	  $("body").css('filter',filterBlur);*/
+	  console.log("test");
     }
     else {
       width+=0.0010;

@@ -104,11 +104,11 @@ top: 0; left: 0; bottom: 0; right: 0;
 
 }
 
-#playButton {
+input[type=button] {
 	
 margin:auto;
 display:block;
-margin-top:20px;
+margin-top:15px;
 cursor:pointer;	
 font-family:Lapsus;
 font-size:55px;
@@ -121,154 +121,82 @@ color:#594830;
 	
 }
 
-#rulesButton {
-
-margin:auto;
-display:block;	
-margin-top:10px;
-cursor:pointer;	
-font-family:Lapsus;
-font-size:55px;
-width:150px;
-border: none;
-background:none;
-outline:none;
-transition: all 0.7s;
-color:#594830;
+input[type=button]:hover {
+	
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+color:#4F3E2A;
 	
 }
-
-#playButton:hover {
-	-webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
- 	transform: scale(1.2);
-	color:#4F3E2A;
-	
-}
-
-#rulesButton:hover {
-	-webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
- 	transform: scale(1.2);
-	color:#4F3E2A;
-	
-}
-
-#scoreButton {
-
-margin:auto;
-display:block;	
-margin-top:10px;
-cursor:pointer;	
-font-family:Lapsus;
-font-size:55px;
-width:150px;
-border: none;
-background:none;
-outline:none;
-transition: all 0.7s;
-color:#594830;
-	
-}
-
-#scoreButton:hover {
-	-webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
- 	transform: scale(1.2);
-	color:#4F3E2A;
-	
-}
-
-#scoreButton:hover {
-	-webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
- 	transform: scale(1.2);
-	color:#4F3E2A;
-	
-}
-
-
-#soundButton {
-	
-float:Right;
-height:80px;
-width:80px;
-background:url(../img/soundON.png);
-border: none;
-outline:none;
-cursor:pointer;	
-transition: all 0.7s;
-	
-}
-
-#soundButton:hover {
-	
--webkit-transform: scale(1.1);
--ms-transform: scale(1.1);
-transform: scale(1.1);
-background:url(../img/soundHover.png);
-	
-}
-
-
 
 .modalBkg {
-    display: none; 
-    position: fixed;
-    z-index: 1; 
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4);
+	
+display: none; 
+position: fixed;
+z-index: 1; 
+padding-top: 100px;
+left: 0;
+top: 0;
+width: 100%; 
+height: 100%; 
+overflow: auto; 
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4);
+	
 }
 
 
 .modal-content {
 	
-	background-color: #fefefe;
-    padding:20px;
-    border:1px solid #888;
-    width:650px;
-	height:450px;
-	margin: auto;
-	font-family:Lapsus;
+background-color: #fefefe;
+padding:20px;
+border:1px solid #888;
+width:650px;
+height:450px;
+margin: auto;
+font-family:Lapsus;
+
 }
 
 .modal-content2 {
 	
-	background-color: #fefefe;
-    padding:20px;
-    border:1px solid #888;
-    width:650px;
-	height:450px;
-	margin: auto;
-	font-family:Lapsus;
+background-color: #fefefe;
+padding:20px;
+border:1px solid #888;
+width:650px;
+height:450px;
+margin: auto;
+font-family:Lapsus;
+
 }
 
 
 .close, .close2 {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+	
+color: #aaaaaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+	
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+	
+color: #000;
+text-decoration: none;
+cursor: pointer;
+
 }
 
 .close2:hover,
 .close2:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+	
+color: #000;
+text-decoration: none;
+cursor: pointer;
+	
 }
 
 h1 {

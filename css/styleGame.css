@@ -191,7 +191,6 @@ margin-top:20px;
 	
 margin:auto;
 display:block;	
-margin-top:;
 cursor:pointer;	
 font-family:Lapsus;
 font-size:55px;
@@ -277,4 +276,209 @@ background:url(../img/soundHover.png);
 	
 }
 
+#gameOverBkg {
+
+display: none; 
+position: fixed;
+left: 0;
+top: 0;
+width: 100%; 
+height: 100%; 
+overflow: auto; 
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0,0.4);
+
+}
+
+#gameOverMenu {
+
+/*border:1px solid red;*/
+width:650px;
+height:600px;
+position: absolute;
+margin: auto;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+	
+}
+
+#gameOverTitle {
+	
+text-align:center;
+vertical-align:middle;
+font-family:Lapsus;
+font-size:140px;
+line-height:120px;
+height:20%;
+color:white;
+-moz-animation: fadein 1s; /* Firefox */
+-webkit-animation: fadein 1s; /* Safari and Chrome */
+-o-animation: fadein 1s; /* Opera */
+ 
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+#gameOverContent {
+	
+background-color: #fefefe;
+width:100%;
+height:80%;
+margin: auto;
+font-family:Lapsus;
+-moz-animation: fadein 2s; /* Firefox */
+-webkit-animation: fadein 2s; /* Safari and Chrome */
+-o-animation: fadein 2s; /* Opera */
+padding-top:40px;
+ 
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+#scoreTitle {
+	
+text-align:center;	
+font-size:80px;
+margin-top:40px;
+	
+}
+
+#score {
+	
+text-align:center;	
+font-size:80px;
+margin-top:10px;
+	
+}
+
+.nickname {
+	
+display:block;
+margin:0 auto;
+font-family:Lapsus;
+font-size: 25px;
+outline: 0;
+border-width: 0 0 2px;
+border-color:rgba(204,204,204,0.2);
+-transition: border-color 1s ease;
+-moz-transition: border-color 0.4s ease;
+ -o-transition: border-color 0.4s ease;
+-ms-transition: border-color 0.4s ease;
+transition: border-color 0.4s ease;    
+
+}
+
+.nickname:focus {
+	
+border-color:rgba(204,204,204,1);
+
+}
+
+.nickname:hover {
+	
+border-color:rgba(204,204,204,0.6);
+
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  opacity:0.35;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  opacity:0.35;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  opacity:0.35;
+}
+:-moz-placeholder { /* Firefox 18- */
+  opacity:0.35;
+}
+
+#replayButton {
+	
+margin:auto;
+display:block;	
+cursor:pointer;	
+font-family:Lapsus;
+font-size:55px;
+border: none;
+background:none;
+outline:none;
+transition: all 0.7s;
+color:#C1C1C1;
+margin-top:50px;
+	
+}
+
+#replayButton:hover {
+
+-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+color:#A5A5A5;
+	
+}
 
