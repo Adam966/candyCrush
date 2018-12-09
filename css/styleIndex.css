@@ -8,7 +8,7 @@ height:100%;
 overflow:hidden;  
 margin:0;
 padding: 0;
-background: linear-gradient(-45deg, #AFC59B, #9FC557);
+background: linear-gradient(-45deg, #B2C66A, #9FC557);
 background-size: 400% 400%;
 -webkit-animation: Gradient 15s ease infinite;
 -moz-animation: Gradient 15s ease infinite;
@@ -57,12 +57,13 @@ animation: Gradient 15s ease infinite;
 	}
 }
 
+
 .bkg1 {
 	
 margin:0;
 width: 100%;
 height: 100%;
-background: url(../img/bkgForTable.png) center / contain no-repeat ;	
+background: url(../img/bkgJungle.png) center / cover no-repeat ;	
 	
 }
 
@@ -71,7 +72,6 @@ background: url(../img/bkgForTable.png) center / contain no-repeat ;
 	
 width:800px;
 height:550px;
-/*background:red;*/
 margin:auto;
 position: absolute;
 top: 0; 
@@ -81,26 +81,27 @@ right: 0;
 
 }
 
-.text {
-	
-text-align: center;
-vertical-align: middle;
-line-height: 200px;  
-font-size:80px;
-font-family:Verdana, Geneva, sans-serif;
+#mainLogo {
 
+height:150px;
+width:400px;
+margin:auto;
+text-align:center;
+	
 }
 
 #centerButtons {
 	
-
 text-align:center;
 width:400px;
 height:250px;
 background:url(../img/bkgCenterBox.png);
 margin: auto;
 position: absolute;
-top: 0; left: 0; bottom: 0; right: 0;
+top: 0; 
+left: 0; 
+bottom: 0; 
+right: 0;
 
 }
 
@@ -208,10 +209,10 @@ text-align:center;
 table {
 
 table-layout:fixed;
-border:collapse;
-margin:auto;	
+border-collapse:collapse;
 width:300px;
 height:370px;
+margin:auto;
 	
 }
 
@@ -219,6 +220,7 @@ td {
 
 width:50px;	
 text-align:center;
+border:1px solid rgba(204,204,204,0.6);
 
 }
 

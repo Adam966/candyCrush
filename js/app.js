@@ -1,7 +1,7 @@
 let pos = new Array();
 let idTemp = new Array();
 let board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
-let music = false;
+let music = true;
 
 //Start function run when game is started
 function start() 
@@ -45,10 +45,12 @@ function checkAudio() {
   if (!music) {
     song.play();
     music=true;
+ 	$("#soundButton").css("background-image", "url('img/soundOn.png')");
   }
   else {
     song.pause();
     music=false;
+	$("#soundButton").css("background-image", "url('img/soundOff.png')");
   }
 }
 
@@ -441,6 +443,7 @@ function checkLane(array, what)
 	if(count >= 3)
 	{
 		console.log("return 1");
+		
 		return 1;
 	}
 	else
