@@ -143,48 +143,17 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			first = checkLane(workArray, fruitType1); //This checks fruit type X (first fruit clicked by the user) and returns 1 if found 3 or more times
 			if(first == 1) //The searched fruit type found 3 or more times following each other
 			{
-				/*
-				   Count the 1-s in "verified" array, there will be 3 or more, add points
-				   pos[0] stores value that which line we are checking, if for example pos[0]=2 then we work with board[2][0-8], this is the third lane from the table
-				   board[lane][column] (like x,y points to one block from the table) stores all value of the table (images) example, board[3][1] - this points to the fourth line second block in line.
-				
-				   EXAMPLE
-				   pos[0] = 2;
-				   verified = [0,0,1,1,1,1,0,0,0];
-				   
-				   you can replace blocks for example to empty image, verified array stores the postions (1)
-				   for(int i=0; i<8; i++)
-				   {
-					   if(verified[i] == 1)
-					   {
-						   board[pos[0]][i] = "img/empty.png";
-					   }
-				   }
-				   this replaces on the board 
-				   board[2][0] = "img/fruit1.png";
-				   board[2][1] = "img/fruit5.png";
-				   board[2][2] = "img/empty.png";
-				   board[2][3] = "img/empty.png";
-				   board[2][4] = "img/empty.png";
-				   board[2][5] = "img/fruit4.png";
-				   board[2][6] = "img/fruit2.png";
-				   board[2][7] = "img/fruit1.png";
-				   
-				*/
-				console.log("FOUND1");
-				resetArray(verified);
-				
+				changeToEmptyRow(pos[0], verified);
+				console.log("FOUND1");			
 			}
-			resetArray(verified);
 			
 			second = checkLane(workArray, fruitType2);
 			if(second == 1)
 			{
 				//do smthing with the items
+				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
-				resetArray(verified);
 			}
-			resetArray(verified);
 			
 			//check column 1
 			//---------------------------FROM THERE THE ITEMS IN THE ARRAY IS NOT FROM A LANE, BUT FROM A COLUMN---------------------------
@@ -192,68 +161,42 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			third = checkLane(workArray, fruitType1);
 			if(third == 1)
 			{
-				/*
-				EXAMPLE
-				   pos[1] = 2;
-				   verified = [0,0,1,1,1,1,0,0,0];
-				   
-				   you can replace blocks for example to empty image, verified array stores the postions (1)
-				   for(int i=0; i<8; i++)
-				   {
-					   if(verified[i] == 1)
-					   {
-						   board[i][pos[1]] = "img/empty.png";
-					   }
-				   }
-				   this replaces on the board 
-				   board[0][2] = "img/fruit1.png";
-				   board[1][2] = "img/fruit5.png";
-				   board[2][2] = "img/empty.png";
-				   board[3][2] = "img/empty.png";
-				   board[4][2] = "img/empty.png";
-				   board[5][2] = "img/fruit4.png";
-				   board[6][2] = "img/fruit2.png";
-				   board[7][2] = "img/fruit1.png";
-				*/
 				//do smthing with the items
+				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND3");
-				resetArray(verified);
 			}
-			resetArray(verified);
 			
 			fourth = checkLane(workArray, fruitType2);
 			if(fourth == 1)
 			{
 				//do smthing with the items
+				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND4");
-				resetArray(verified);
 			}
-			resetArray(verified);
 			//check column 2
 			fillWorkColumn(pos[3]);// <------------------------pos[3]
 			fifth = checkLane(workArray, fruitType1);
 			if(fifth == 1)
 			{
 				//do smthing with the items
+				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND5");
-				resetArray(verified);
 			}
-			resetArray(verified);
 			
 			sixth = checkLane(workArray, fruitType2);
 			if(sixth == 1)
 			{
 				//do smthing with the items
+				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND6");
-				resetArray(verified);
 			}
 			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
 			{
 				console.log("NOTHIN FOUND");
 				changePos();
-				resetArray(verified);
 			}
-			resetArray(workArray);
+
+			
 			idTemp = new Array();
 			pos.length = 0;
 		}
@@ -266,20 +209,17 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			if(first == 1)
 			{
 				//do smthing with the items
-				console.log("FOUND1");
-				resetArray(verified);
-				
+				changeToEmptyRow(pos[0], verified);
+				console.log("FOUND1");	
 			}
-			resetArray(verified);
 			
 			second = checkLane(workArray, fruitType2);
 			if(second == 1)
 			{
 				//do smthing with the items
+				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
-				resetArray(verified);
 			}
-			resetArray(verified);
 			
 			fillWorkLane(pos[2]);// <------------------------pos[2]
 			
@@ -287,20 +227,17 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			if(third == 1)
 			{
 				//do smthing with the items
+				changeToEmptyRow(pos[2], verified);
 				console.log("FOUND3");
-				resetArray(verified);
 			}
-			resetArray(verified);
 			
 			fourth = checkLane(workArray, fruitType2);
 			if(fourth == 1)
 			{
 				//do smthing with the items
+				changeToEmptyRow(pos[2], verified);
 				console.log("FOUND4");
-				resetArray(verified);
 			}
-			resetArray(verified);
-			
 			
 			//check column
 			//---------------------------FROM THERE THE ITEMS IN THE ARRAY IS NOT FROM A LANE, BUT FROM A COLUMN---------------------------
@@ -310,30 +247,60 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			if(fifth == 1)
 			{
 				//do smthing with the items
+				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND5");
-				resetArray(verified);
 			}
-			resetArray(verified);
 			
 			sixth = checkLane(workArray, fruitType2);
 			if(sixth == 1)
 			{
 				//do smthing with the items
+				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND6");
-				resetArray(verified);
 			}
 			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
 			{
 				console.log("NOTHIN FOUND");
 				changePos();
-				resetArray(verified);
 			}
-			resetArray(workArray);
+			
 			idTemp = new Array();
-			pos.length = 0;
+			pos.length = 0; 
 		}
-		
-		
+}
+
+
+function changeToEmptyRow(position, array)
+{
+	console.log("row");
+	console.log("position is: "+position);
+	console.log("verified is: "+array);
+	let pos=0;
+	for(let i=0; i<8; i++)
+	{
+		if(array[i] == 1)
+		{
+			pos = (8*position)+i;
+	    	board[position][i] = "img/empty.png";
+			document.getElementById('elm'+pos).src = "img/empty.png";
+		}
+	}
+}
+function changeToEmptyColumn(position, array)
+{
+	console.log("column");
+	console.log("position is: "+position);
+	console.log("verified is: "+array);
+	let pos=position;
+	for(let i=0; i<8; i++)
+	{
+		if(array[i] == 1)
+		{
+			board[i][position] = "img/empty.png";
+			document.getElementById('elm'+pos).src = "img/empty.png";
+		}
+		pos += 8;
+	}
 }
 
 //when second position is only one away form first position draw with changed symbols board
@@ -409,6 +376,7 @@ function getType(fruit)
 function checkLane(array, what)
 {
 	console.log("checking type "+what);
+	resetVerified();
 	let last1 = 0;
 	let count = 0;
     for (let i = 0; i < array.length; i++) 
@@ -453,15 +421,10 @@ function checkLane(array, what)
 	}
 }
 
-function checkColumn()
+function resetVerified()
 {
-	
-}
-
-function resetArray(lane)
-{
-    for(let i = 0; i < lane.length; i++)
+    for(let i = 0; i < verified.length; i++)
     {
-		lane[i] = 0;
+		verified[i] = 0;
     }
 }
