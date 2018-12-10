@@ -57,8 +57,8 @@ background: url(../img/bkgJungle.png) center / cover no-repeat ;
 #WrapperCenter {
 	
 /*border:1px solid red;*/
-width:800px;
-height:800px;
+width:50%;
+height:80%;
 margin:auto;
 position: absolute;
 top: 0; 
@@ -70,35 +70,41 @@ right: 0;
 
 #mainLogo {
 
-height:270px;
-width:800px;
+/*border:1px solid blue;*/
+height:280px;
+width:100%;
 margin:auto;
 text-align:center;
-/*border:1px solid red;*/
 background:url(../img/logo.png) center / contain no-repeat;
+margin-bottom:15px;
 	
 }
 
-#centerButtons {
-	
-text-align:center;
+#buttonsCenter {
+
+/*border:1px solid yellow;*/
 width:400px;
 height:250px;
 background:url(../img/bkgCenterBox.png);
 margin: auto;
-position: absolute;
-top: 0; 
-left: 0; 
-bottom: 0; 
-right: 0;
 
 }
+
+#buttonsWrapper {
+
+margin:auto;
+width:300px;
+/*background:red;*/
+padding-top:6px;
+	
+}
+
 
 input[type=button] {
 	
 margin:auto;
 display:block;
-margin-top:15px;
+margin-top:10px;
 cursor:pointer;	
 font-family:Lapsus;
 font-size:55px;

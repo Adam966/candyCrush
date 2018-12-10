@@ -154,41 +154,20 @@ height:50%;
 
 width:100%;
 height:50%;
-/*background:red;*/
-
-}
-
-#scoreHalf3 {
-
-width:100%;
-height:50%;
 /*background:blue;*/
 
 }
 
-#scoreHalf4 {
-
-width:100%;
-height:50%;
-/*background:green;*/
-
-}
-
-#scoreWrapper {
-
-width:70%;
-height:100%;
-margin:auto;
-position:relative;
-	
-}
-
 #scoreUI {
 	
-width:100%;
-height:100%;
+width:220px;
+height:220px;
 background:url(../img/scoreIMG.png) center / contain no-repeat;
-margin-top:20px;
+/*border:1px solid red;*/
+position:fixed;
+bottom:0;
+right:0;
+margin-right:50px;
 
 }
 
