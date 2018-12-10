@@ -20,11 +20,11 @@ function reset() {
 //timer start
 function timer() {
   let time = document.getElementById("progress");
-  let width = 0;
+  let width = 100;
   let interval = setInterval(frame, 1);
 
   function frame() {
-    if (width >= 100) {
+    if (width <= 0) {
       clearInterval(interval);
 	  $("#gameOverBkg").fadeIn("slow");
 	 /* let filterBlur='blur(5px)';
@@ -32,7 +32,7 @@ function timer() {
 	  console.log("test");
     }
     else {
-      width+=0.0010;
+      width-=0.0010;
       time.style.width = width + '%';
     }
   }
