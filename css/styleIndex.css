@@ -141,7 +141,6 @@ background-color: rgba(0,0,0,0.4);
 	
 }
 
-
 .modal-content {
 	
 background-color: #fefefe;
@@ -151,6 +150,7 @@ width:650px;
 height:450px;
 margin: auto;
 font-family:Lapsus;
+border-radius:10px;
 
 }
 
@@ -163,6 +163,7 @@ width:650px;
 height:450px;
 margin: auto;
 font-family:Lapsus;
+border-radius:10px;
 
 }
 
@@ -227,19 +228,4 @@ margin-top:15px;
 /*border:1px solid red;*/
 
 }
-
-img {
-	
-float:left;	
-	
-}
-
-.imageText {
-	
-float:right;
-font-size:25px;
-margin-top:20px;
-	
-}
-
 

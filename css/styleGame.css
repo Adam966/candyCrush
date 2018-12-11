@@ -110,7 +110,7 @@ justify-content: center;
 table {
 
 border-radius: 20px;
-border:1px solid rgba(255,255,255,0.3);
+border:5px solid rgba(94, 77, 54, 0.5);
 /*border-collapse: collapse;*/
 width:60%;
 height:60%;
@@ -195,7 +195,7 @@ border: none;
 background:none;
 outline:none;
 transition: all 0.7s;
-color:#586060;
+color:#4A5656;
 	
 }
 
@@ -204,7 +204,7 @@ color:#586060;
 -webkit-transform: scale(1.2);
 -ms-transform: scale(1.2);
 transform: scale(1.2);
-color:#4A5656;
+color:#3A4444;
 	
 }
 
@@ -214,6 +214,7 @@ width: 80%;
 height: 30px;
 margin:auto;
 background-color:#97A4A5;
+border-radius:5px;
 
 }
 
@@ -222,7 +223,7 @@ background-color:#97A4A5;
 background-color:rgba(255,255,255,1);
 width:100%;
 height:30px;
-
+border-radius:5px;
   
 }
 
@@ -360,6 +361,7 @@ font-family:Lapsus;
 -webkit-animation: fadein 2s; /* Safari and Chrome */
 -o-animation: fadein 2s; /* Opera */
 padding-top:40px;
+border-radius:10px;
  
 }
 @keyframes fadein {
@@ -404,7 +406,7 @@ margin-top:40px;
 	
 }
 
-#score {
+#gameOverScore {
 	
 text-align:center;	
 font-size:80px;
