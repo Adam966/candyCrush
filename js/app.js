@@ -3,6 +3,9 @@ let idTemp = new Array();
 let board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
 let music = true;
 
+
+let score = 0;
+
 //Start function run when game is started
 function start() 
 {
@@ -153,6 +156,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
+				score+=3;
 			}
 			
 			//check column 1
@@ -163,7 +167,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
-				console.log("FOUND3");
+				score++;
 			}
 			
 			fourth = checkLane(workArray, fruitType2);
@@ -171,7 +175,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
-				console.log("FOUND4");
+				score+=4;
 			}
 			//check column 2
 			fillWorkColumn(pos[3]);// <------------------------pos[3]
@@ -181,6 +185,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND5");
+				score+=6;
 			}
 			
 			sixth = checkLane(workArray, fruitType2);
@@ -189,6 +194,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND6");
+				score+=7;
 			}
 			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
 			{
@@ -219,6 +225,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
+				score+=5;
 			}
 			
 			fillWorkLane(pos[2]);// <------------------------pos[2]
@@ -228,6 +235,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyRow(pos[2], verified);
+				score++;
 				console.log("FOUND3");
 			}
 			
@@ -237,6 +245,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyRow(pos[2], verified);
 				console.log("FOUND4");
+				score++;
 			}
 			
 			//check column
@@ -249,6 +258,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND5");
+				score++;
 			}
 			
 			sixth = checkLane(workArray, fruitType2);
@@ -267,6 +277,8 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			idTemp = new Array();
 			pos.length = 0; 
 		}
+		document.getElementById("scoreMain").innerHTML = score;
+
 }
 
 
