@@ -278,15 +278,13 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			pos.length = 0; 
 		}
 		document.getElementById("scoreMain").innerHTML = score;
+		setTimeout(moveBlocks, 250);
 
 }
 
 
 function changeToEmptyRow(position, array)
 {
-	console.log("row");
-	console.log("position is: "+position);
-	console.log("verified is: "+array);
 	let pos=0;
 	for(let i=0; i<8; i++)
 	{
@@ -300,9 +298,6 @@ function changeToEmptyRow(position, array)
 }
 function changeToEmptyColumn(position, array)
 {
-	console.log("column");
-	console.log("position is: "+position);
-	console.log("verified is: "+array);
 	let pos=position;
 	for(let i=0; i<8; i++)
 	{
@@ -312,6 +307,66 @@ function changeToEmptyColumn(position, array)
 			document.getElementById('elm'+pos).src = "img/empty.png";
 		}
 		pos += 8;
+	}
+}
+
+function moveBlocks()
+{
+	let tempArray;
+    let count;
+	let last;
+	
+	console.log("moveBlocks STARTED");
+	for(let i=0; i<8; i++)
+	{
+		tempArray = [0,0,0,0,0,0,0,0];
+		count=0;
+		last=15;
+		
+		fillWorkColumnRaw(i);
+		
+		for(let j=7; j>=0; j--)
+		{
+			if(workArray[j] == "img/empty.png")
+			{
+				count++;
+				tempArray[j] = 1;
+				if(last == 15){last = j;}
+		    }
+		}
+		
+		let pos=i+((last-count)*8);
+	    let tempimg;
+		let templast = last;
+		if(last != 15)
+		{
+	    	for(j=last-count; j>=0; j--)
+	    	{
+	    		tempimg = document.getElementById('elm'+pos).getAttribute('src');
+	    		board[templast][i] = tempimg;
+	    	    document.getElementById('elm'+(pos+(8*count))).src = tempimg;
+				
+				document.getElementById('elm'+pos).src = "img/empty.png";
+				board[j][i] = "img/empty.png";
+	    	    pos -= 8;
+				templast--;
+	    	}
+	    }
+		pos = i;
+		moveIt(pos, count, i);
+		moveIt(pos, count, i);
+	}
+	
+	function moveIt(pos, count, i)
+	{
+		let valueNew;
+		for(j=0; j<count; j++)
+		{
+			valueNew = randomizer();
+			document.getElementById('elm'+pos).src = valueNew;
+			board[j][i] = valueNew;
+			pos += 8;
+		}
 	}
 }
 
@@ -359,6 +414,14 @@ function fillWorkColumn(xpos)
 	for (let j = 0; j < 8; j++)
 	      {
 			  workArray[j]= getType(board[j][xpos]);
+	      }
+}
+
+function fillWorkColumnRaw(xpos)
+{
+	for (let j = 0; j < 8; j++)
+	      {
+			  workArray[j]= (board[j][xpos]);
 	      }
 }
 
