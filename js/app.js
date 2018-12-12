@@ -147,11 +147,19 @@ function checkAudio() {
 }
 
 //render the board with random symbols
+let lastelement = randomizer();
 function setupBoard(board) {
   let index = 0;
+  let elm;
   for (var i = 0; i < board.length; i++) {
     for (var j = 0; j < board.length; j++) {
-      board[i][j] = randomizer();
+	  elm = randomizer();
+	  while(elm == lastelement)
+	  {
+		  elm = randomizer();
+	  }
+      board[i][j] = elm;
+	  lastelement = elm;
 //      console.log("Array: " + i + j);
 //      console.log("Index: " + index);
 //      console.log(board[i][j]);
@@ -449,11 +457,17 @@ function moveBlocks()
 	function moveIt(pos, count, i)
 	{
 		let valueNew;
+		let elm;
 		for(j=0; j<count; j++)
 		{
-			valueNew = randomizer();
-			document.getElementById('elm'+pos).src = valueNew;
-			board[j][i] = valueNew;
+		    elm = randomizer();
+	        while(elm == lastelement)
+	        {
+		        elm = randomizer();
+	        }
+			lastelement = elm;
+			document.getElementById('elm'+pos).src = elm;
+			board[j][i] = elm;
 			pos += 8;
 		}
 	}
