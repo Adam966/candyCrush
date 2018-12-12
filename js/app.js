@@ -105,7 +105,15 @@ function start()
 //when is game over reset function go to the menu page
 function reset() {
   saveScore($("#nickname").val(), score);
+   let name=document.getElementById('nickname').value;
+  if(name == ""){
+  alert("The form is incomplete");
+        return false;
+  }
+  else
+  {
   window.location.href = 'index.html';
+  }
 }
 
 //could change the time of the game
@@ -124,7 +132,7 @@ function timer() {
 	  console.log("test");
     }
     else {
-      width-=0.0010;
+      width-=1.0010;
       time.style.width = width + '%';
     }
   }
