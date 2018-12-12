@@ -12,11 +12,19 @@
 </head>
 <body onload="start()">
   <div class="bkg1">
-  
-  <audio id="song">
-	  <source src="jungle.mp3" type="audio/mp3">
-	  Your browser does not support the audio element.
-	</audio>
+    <!--<iframe src="jungle.mp3" allow="autoplay" id="audio" style="display: none"></iframe>-->
+    <audio id="merge">
+      <source src="merge.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="error">
+      <source src="error.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="song" autoplay loop>
+  	  <source src="jungle.mp3" type="audio/mp3">
+  	  Your browser does not support the audio element.
+  	</audio>
   <div id="leftBox"></div>
 
   <div id="centerBox">
@@ -117,13 +125,13 @@
         <div id="scoreHalf1"> <button name="button" id="soundButton" onclick="checkAudio()"></button> </div>
 
         <div id="scoreHalf2">
-	
+
              <div id="scoreUI">
-                    
+
                   <div id="progressWrapper">
-                  
+
                    	<div id="progress"><span id="scoreTime">Your Time</span></div>
-                    
+
                   </div>
 
 				  <div class="scoreTitle">Score</div>
@@ -134,9 +142,9 @@
           	 </div>
 
         </div>
-        
+
         <div id="gameOverBkg" class="bkgBlur">
-        
+
             <div id="gameOverMenu">
                  <div id="gameOverTitle">Game Over</div>
                  <!-- Rules content -->
@@ -147,7 +155,7 @@
                  <button type="submit" id="replayButton" onclick="replay()">Play Again</button>
                  </div>
             </div>
-      
+
       	</div>
     </div>
 </div>

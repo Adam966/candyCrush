@@ -57,7 +57,16 @@ var refreshScoreTable = function(){
 	//score of the Tenth player with the highest score
 	}
 }
-
+//Chrome music
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+      $('#audio').remove();
+			console.log("remove audio");
+    }
+  else{
+     $('#song').remove(); //just to make sure that it will not have 2x audio in the background
+		 console.log("remove iframe");
+}
 
 
 let pos = new Array();
@@ -72,7 +81,7 @@ let score = 0;
 var localStorage = window.localStorage;
 console.log(localStorage);
 //alert
-//dont try this at home 
+//dont try this at home
 //{name:"janko", score:"13"}
 //top secret
 if(localStorage.length != 0){
@@ -89,19 +98,17 @@ var sortScoreTable = function(){
 //saving score to the scoreboard on the index.html
 var saveScore = function(name, score){
 	scoreTable.push({name:name, score:score});
-	
+
 	localStorage.setItem("scoreTable", JSON.stringify(scoreTable));
 	refreshScoreTable();
 }
 //Start function run when game is started
-function start() 
+function start()
 {
   setupBoard(board);
   timer();
   console.log(board);
-
 }
-
 //when is game over reset function go to the menu page
 function reset() {
  /* saveScore($("#nickname").val(), score);
@@ -122,8 +129,8 @@ function replay() {
   {
   window.location.href = 'index.html';
   }
-	
-	
+
+
 }
 
 //could change the time of the game
@@ -140,14 +147,26 @@ function timer() {
 	 /* let filterBlur='blur(5px)';
 	  $("body").css('filter',filterBlur);*/
 	  console.log("test");
+    document.getElementById('scoreTitle').innerHTML = score;
     }
     else {
-      width-=0.1110;
+      width-=0.0030;
       time.style.width = width + '%';
     }
   }
 }
 
+function playError() {
+  let error = document.getElementById('error')
+  error.play();
+  console.log("Error");
+}
+
+function playMerge() {
+  let merge = document.getElementById('merge')
+  merge.play();
+  console.log("Merge");
+}
 //on/off audio
 function checkAudio() {
   let song = document.getElementById("song");
@@ -218,7 +237,7 @@ function randomizer() {
 }
 
 let workArray = [0,0,0,0,0,0,0,0,0]; //This array stores the current lane or column, the verification works with
-let verified = [0,0,0,0,0,0,0,0,0]; //Stores 1 where the algorithm found continuous images 
+let verified = [0,0,0,0,0,0,0,0,0]; //Stores 1 where the algorithm found continuous images
 let fruitType1=0; //Stores number of the fruit(first block selected by the user)
 let fruitType2=0; //Stores number of the fruit(second block selected by the user)
 
@@ -234,7 +253,7 @@ function getPos(x, y, id) {
 	{
 		console.log("Start change pos");
 		changePos();
-	
+
 		//verify();
 		setTimeout(verify, 300) //After changing the two blocks selected by the user,  start verification
 		//pos.length = 0;
@@ -242,29 +261,30 @@ function getPos(x, y, id) {
   }
 }
 
-function verify() //Verifies columns, lanes, stores found values in verified -array for a limited time 
+function verify() //Verifies columns, lanes, stores found values in verified -array for a limited time
 {
 		fruitType1 = getType(document.getElementById(idTemp[0]).getAttribute('src')); //Gets the type of the first fruit (number 1-5)
 	    fruitType2 = getType(document.getElementById(idTemp[1]).getAttribute('src')); //Gets the type of the second fruit (number 1-5)
 		let first = 0; //first-sixth stores returned values, found-1, not found-0
-		let second = 0;	
+		let second = 0;
         let third = 0;
-        let fourth = 0;	
+        let fourth = 0;
         let fifth = 0;
-        let sixth = 0;	
-		
-		if(pos[0] == pos[2]) 
+        let sixth = 0;
+
+		if(pos[0] == pos[2])
 		{
 			fillWorkLane(pos[0]);
-			
+
 			//------------------------------------------------------LANE------------------------------------------------------
 			first = checkLane(workArray, fruitType1); //This checks fruit type X (first fruit clicked by the user) and returns 1 if found 3 or more times
 			if(first == 1) //The searched fruit type found 3 or more times following each other
 			{
 				changeToEmptyRow(pos[0], verified);
-				console.log("FOUND1");			
+				console.log("FOUND1");
+        playMerge();
 			}
-			
+
 			second = checkLane(workArray, fruitType2);
 			if(second == 1)
 			{
@@ -272,8 +292,9 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
 				score+=3;
+        playMerge();
 			}
-			
+
 			//check column 1
 			//---------------------------FROM THERE THE ITEMS IN THE ARRAY IS NOT FROM A LANE, BUT FROM A COLUMN---------------------------
 			fillWorkColumn(pos[1]); // <------------------------pos[1]
@@ -283,14 +304,16 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
 				score+=3;
+				playMerge();
 			}
-			
+
 			fourth = checkLane(workArray, fruitType2);
 			if(fourth == 1)
 			{
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
 				score+=3;
+        playMerge();
 			}
 			//check column 2
 			fillWorkColumn(pos[3]);// <------------------------pos[3]
@@ -301,8 +324,9 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND5");
 				score+=3;
+        playMerge();
 			}
-			
+
 			sixth = checkLane(workArray, fruitType2);
 			if(sixth == 1)
 			{
@@ -310,18 +334,20 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND6");
 				score+=3;
+        playMerge();
 			}
 			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
 			{
 				console.log("NOTHIN FOUND");
 				changePos();
+        playError();
 			}
 
-			
+
 			idTemp = new Array();
 			pos.length = 0;
 		}
-		
+
 		if(pos[1] == pos[3] && pos[0] != pos[2])
 		{
 			fillWorkLane(pos[0]);// <------------------------pos[0]
@@ -331,9 +357,10 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyRow(pos[0], verified);
-				console.log("FOUND1");	
+				console.log("FOUND1");
+        playMerge();
 			}
-			
+
 			second = checkLane(workArray, fruitType2);
 			if(second == 1)
 			{
@@ -341,10 +368,11 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
 				score+=3;
+        playMerge();
 			}
-			
+
 			fillWorkLane(pos[2]);// <------------------------pos[2]
-			
+
 			third = checkLane(workArray, fruitType1);
 			if(third == 1)
 			{
@@ -352,8 +380,9 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				changeToEmptyRow(pos[2], verified);
 				score+=3;
 				console.log("FOUND3");
+        playMerge();
 			}
-			
+
 			fourth = checkLane(workArray, fruitType2);
 			if(fourth == 1)
 			{
@@ -361,12 +390,13 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				changeToEmptyRow(pos[2], verified);
 				console.log("FOUND4");
 				score+=3;
+        playMerge();
 			}
-			
+
 			//check column
 			//---------------------------FROM THERE THE ITEMS IN THE ARRAY IS NOT FROM A LANE, BUT FROM A COLUMN---------------------------
 			fillWorkColumn(pos[1]);// <------------------------pos[1]
-			
+
 			fifth = checkLane(workArray, fruitType1);
 			if(fifth == 1)
 			{
@@ -374,23 +404,26 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND5");
 				score+=3;
+        playMerge();
 			}
-			
+
 			sixth = checkLane(workArray, fruitType2);
 			if(sixth == 1)
 			{
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND6");
+        playMerge();
 			}
 			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
 			{
 				console.log("NOTHIN FOUND");
 				changePos();
+        playError();
 			}
-			
+
 			idTemp = new Array();
-			pos.length = 0; 
+			pos.length = 0;
 		}
 		document.getElementById("scoreMain").innerHTML = score;
 		setTimeout(moveBlocks, 250);
@@ -430,16 +463,16 @@ function moveBlocks()
 	let tempArray;
     let count;
 	let last;
-	
+
 	console.log("moveBlocks STARTED");
 	for(let i=0; i<8; i++)
 	{
 		tempArray = [0,0,0,0,0,0,0,0];
 		count=0;
 		last=15;
-		
+
 		fillWorkColumnRaw(i);
-		
+
 		for(let j=7; j>=0; j--)
 		{
 			if(workArray[j] == "img/empty.png")
@@ -449,7 +482,7 @@ function moveBlocks()
 				if(last == 15){last = j;}
 		    }
 		}
-		
+
 		let pos=i+((last-count)*8);
 	    let tempimg;
 		let templast = last;
@@ -460,7 +493,7 @@ function moveBlocks()
 	    		tempimg = document.getElementById('elm'+pos).getAttribute('src');
 	    		board[templast][i] = tempimg;
 	    	    document.getElementById('elm'+(pos+(8*count))).src = tempimg;
-				
+
 				document.getElementById('elm'+pos).src = "img/empty.png";
 				board[j][i] = "img/empty.png";
 	    	    pos -= 8;
@@ -471,7 +504,7 @@ function moveBlocks()
 		moveIt(pos, count, i);
 		moveIt(pos, count, i);
 	}
-	
+
 	function moveIt(pos, count, i)
 	{
 		let valueNew;
@@ -548,7 +581,7 @@ function fillWorkColumnRaw(xpos)
 
 function getType(fruit)
 {
-	 switch (fruit) 
+	 switch (fruit)
 	     	  {
                   case "img/fruit1.png":
                      return 1;
@@ -575,9 +608,9 @@ function checkLane(array, what)
 	resetVerified();
 	let last1 = 0;
 	let count = 0;
-    for (let i = 0; i < array.length; i++) 
+    for (let i = 0; i < array.length; i++)
     {
-        if (array[i] === what) 
+        if (array[i] === what)
         {
             verified[i] = 1;
             count++;
@@ -607,7 +640,7 @@ function checkLane(array, what)
 	if(count >= 3)
 	{
 		console.log("return 1");
-		
+
 		return 1;
 	}
 	else
