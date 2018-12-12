@@ -264,7 +264,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
-				score++;
+				score+=3;
 			}
 			
 			fourth = checkLane(workArray, fruitType2);
@@ -272,7 +272,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
-				score+=4;
+				score+=3;
 			}
 			//check column 2
 			fillWorkColumn(pos[3]);// <------------------------pos[3]
@@ -282,7 +282,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND5");
-				score+=6;
+				score+=3;
 			}
 			
 			sixth = checkLane(workArray, fruitType2);
@@ -291,7 +291,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND6");
-				score+=7;
+				score+=3;
 			}
 			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
 			{
@@ -322,7 +322,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
-				score+=5;
+				score+=3;
 			}
 			
 			fillWorkLane(pos[2]);// <------------------------pos[2]
@@ -332,7 +332,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyRow(pos[2], verified);
-				score++;
+				score+=3;
 				console.log("FOUND3");
 			}
 			
@@ -342,7 +342,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyRow(pos[2], verified);
 				console.log("FOUND4");
-				score++;
+				score+=3;
 			}
 			
 			//check column
@@ -355,7 +355,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND5");
-				score++;
+				score+=3;
 			}
 			
 			sixth = checkLane(workArray, fruitType2);
