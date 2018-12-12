@@ -6,9 +6,10 @@
 <!-- CSS prepojenie-->
 <link rel="stylesheet" href="css/styleGame.css" type="text/css">
 <!-- JS prepojenie-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <!-- jQuery prepojenie-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <body onload="start()">
   <div class="bkg1">
@@ -141,7 +142,7 @@
                  <div id="gameOverTitle">Game Over</div>
                  <!-- Rules content -->
                  <div id="gameOverContent">
-                 <input type="text" class="nickname" name="nickname" placeholder="Enter your name">
+                 <input type="text" class="nickname" id="nickname" name="nickname" placeholder="Enter your name">
                  <div id="scoreTitle">Your Score:</div>
                  <div id="gameOverScore"></div>
                  <button type="submit" id="replayButton" onclick="reset()">Play Again</button>

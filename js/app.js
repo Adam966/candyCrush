@@ -1,3 +1,65 @@
+//score table na main page
+//array of the TOP ten players score
+//check the score if there couold be 2 player with the same name
+//added sorting so the score shows from highest to the lowest
+
+var scoreTable = [];
+var refreshScoreTable = function(){
+	sortScoreTable();
+	if(scoreTable[0] != undefined ){
+		$("#1name").text(scoreTable[0].name);
+		$("#1score").text(scoreTable[0].score);
+		//score of the First player with the highest score
+	}
+	if(scoreTable[1] != undefined ){
+		$("#2name").text(scoreTable[1].name);
+		$("#2score").text(scoreTable[1].score);
+		//score of the Second player with the highest score
+	}
+	if(scoreTable[2] != undefined ){
+	$("#3name").text(scoreTable[2].name);
+	$("#3score").text(scoreTable[2].score);
+    //score of the Third player with the highest score
+    }
+    if(scoreTable[3] != undefined ){
+	$("#4name").text(scoreTable[3].name);
+	$("#4score").text(scoreTable[3].score);
+	//score of the Fourth player with the highest score
+	}
+	if(scoreTable[4] != undefined ){
+	$("#5name").text(scoreTable[4].name);
+	$("#5score").text(scoreTable[4].score);
+	//score of the Fifth player with the highest score
+	}
+	if(scoreTable[5] != undefined ){
+	$("#6name").text(scoreTable[5].name);
+	$("#6score").text(scoreTable[5].score);
+	//score of the Sixth player with the highest score
+	}
+	if(scoreTable[6] != undefined ){
+	$("#7name").text(scoreTable[6].name);
+	$("#7score").text(scoreTable[6].score);
+	//score of the Seventh player with the highest score
+	}
+	if(scoreTable[7] != undefined ){
+	$("#8name").text(scoreTable[7].name);
+	$("#8score").text(scoreTable[7].score);
+	//score of the Eight player with the highest score
+	}
+	if(scoreTable[8] != undefined ){
+	$("#9name").text(scoreTable[8].name);
+	$("#9score").text(scoreTable[8].score);
+	//score of the Ninth player with the highest score
+	}
+	if(scoreTable[9] != undefined ){
+	$("#10name").text(scoreTable[9].name);
+	$("#10score").text(scoreTable[9].score);
+	//score of the Tenth player with the highest score
+	}
+}
+
+
+
 let pos = new Array();
 let idTemp = new Array();
 let board = [[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
@@ -6,6 +68,31 @@ let music = true;
 
 let score = 0;
 
+
+var localStorage = window.localStorage;
+console.log(localStorage);
+//alert
+//dont try this at home 
+//{name:"janko", score:"13"}
+//top secret
+if(localStorage.length != 0){
+	scoreTable = JSON.parse(localStorage.getItem("scoreTable"));
+}
+
+//sorting from highest to the lowest
+var sortScoreTable = function(){
+	scoreTable.sort((a, b) => {
+
+		return a.score>b.score?-1:1;
+	});
+}
+//saving score to the scoreboard on the index.html
+var saveScore = function(name, score){
+	scoreTable.push({name:name, score:score});
+	
+	localStorage.setItem("scoreTable", JSON.stringify(scoreTable));
+	refreshScoreTable();
+}
 //Start function run when game is started
 function start() 
 {
@@ -17,9 +104,11 @@ function start()
 
 //when is game over reset function go to the menu page
 function reset() {
+  saveScore($("#nickname").val(), score);
   window.location.href = 'index.html';
 }
 
+//could change the time of the game
 //timer start
 function timer() {
   let time = document.getElementById("progress");
