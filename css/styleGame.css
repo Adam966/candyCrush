@@ -352,7 +352,7 @@ color:white;
 
 #gameOverContent {
 	
-background-color: #fefefe;
+background-color: #A8C45C;
 width:100%;
 height:80%;
 margin: auto;
@@ -403,6 +403,7 @@ border-radius:10px;
 text-align:center;	
 font-size:80px;
 margin-top:40px;
+color:white;
 	
 }
 
@@ -411,6 +412,7 @@ margin-top:40px;
 text-align:center;	
 font-size:80px;
 margin-top:10px;
+color:white;
 	
 }
 
@@ -421,39 +423,45 @@ margin:0 auto;
 font-family:Lapsus;
 font-size: 25px;
 outline: 0;
-border-width: 0 0 2px;
-border-color:rgba(204,204,204,0.2);
+border-width: 0 0 4px;
+border-color:rgba(255,255,255,0.4);
 -transition: border-color 1s ease;
 -moz-transition: border-color 0.4s ease;
  -o-transition: border-color 0.4s ease;
 -ms-transition: border-color 0.4s ease;
 transition: border-color 0.4s ease;    
+background:none;
+color:white;
 
 }
 
 .nickname:focus {
 	
-border-color:rgba(204,204,204,1);
+border-color:rgba(255,255,255,1);
 
 }
 
 .nickname:hover {
 	
-border-color:rgba(204,204,204,0.6);
+border-color:rgba(255,255,255,0.6);
 
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  opacity:0.35;
+  opacity:0.5;
+  color:#879B3E;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  opacity:0.35;
+  opacity:0.5;
+  color:#879B3E;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  opacity:0.35;
+  opacity:0.5;
+  color:#879B3E;
 }
 :-moz-placeholder { /* Firefox 18- */
-  opacity:0.35;
+  opacity:0.5;
+  color:#879B3E;
 }
 
 #replayButton {
@@ -467,7 +475,7 @@ border: none;
 background:none;
 outline:none;
 transition: all 0.7s;
-color:#C1C1C1;
+color:#879B3E;
 margin-top:50px;
 	
 }
@@ -477,7 +485,7 @@ margin-top:50px;
 -webkit-transform: scale(1.2);
 -ms-transform: scale(1.2);
 transform: scale(1.2);
-color:#A5A5A5;
+color:#748431;
 	
 }
 

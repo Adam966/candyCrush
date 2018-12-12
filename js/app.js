@@ -119,14 +119,14 @@ function reset() {
 
 function replay() {
 
-  saveScore($("#nickname").val(), score);
   let name=document.getElementById('nickname').value;
   if(name == ""){
-  alert("The form is incomplete");
+  alert("You must enter player name");
         return false;
   }
   else
   {
+  saveScore($("#nickname").val(), score);
   window.location.href = 'index.html';
   }
 
@@ -426,6 +426,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			pos.length = 0;
 		}
 		document.getElementById("scoreMain").innerHTML = score;
+		document.getElementById("gameOverScore").innerHTML = score;
 		setTimeout(moveBlocks, 250);
 
 }
