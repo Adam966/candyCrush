@@ -104,8 +104,16 @@ function start()
 
 //when is game over reset function go to the menu page
 function reset() {
+ /* saveScore($("#nickname").val(), score);
+  {*/
+  window.location.href = 'index.html';
+/*  }*/
+}
+
+function replay() {
+
   saveScore($("#nickname").val(), score);
-   let name=document.getElementById('nickname').value;
+  let name=document.getElementById('nickname').value;
   if(name == ""){
   alert("The form is incomplete");
         return false;
@@ -114,6 +122,8 @@ function reset() {
   {
   window.location.href = 'index.html';
   }
+	
+	
 }
 
 //could change the time of the game
@@ -132,7 +142,7 @@ function timer() {
 	  console.log("test");
     }
     else {
-      width-=1.0010;
+      width-=0.1110;
       time.style.width = width + '%';
     }
   }
