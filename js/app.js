@@ -253,26 +253,24 @@ function getPos(x, y, id) {
 
 function verify() //Verifies columns, lanes, stores found values in verified -array for a limited time
 {
-		fruitType1 = getType(document.getElementById(idTemp[0]).getAttribute('src')); //Gets the type of the first fruit (number 1-5)
-	    fruitType2 = getType(document.getElementById(idTemp[1]).getAttribute('src')); //Gets the type of the second fruit (number 1-5)
+		fruitType2 = getType(document.getElementById(idTemp[0]).getAttribute('src')); //Gets the type of the first fruit (number 1-5)
+	    fruitType1 = getType(document.getElementById(idTemp[1]).getAttribute('src')); //Gets the type of the second fruit (number 1-5)
 		let first = 0; //first-sixth stores returned values, found-1, not found-0
 		let second = 0;
         let third = 0;
         let fourth = 0;
-        let fifth = 0;
-        let sixth = 0;
-
+		
 		if(pos[0] == pos[2])
 		{
 			fillWorkLane(pos[0]);
-
 			//------------------------------------------------------LANE------------------------------------------------------
 			first = checkLane(workArray, fruitType1); //This checks fruit type X (first fruit clicked by the user) and returns 1 if found 3 or more times
 			if(first == 1) //The searched fruit type found 3 or more times following each other
 			{
 				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND1");
-        playMerge();
+				gatherPoints(verified);
+                playMerge();
 			}
 
 			second = checkLane(workArray, fruitType2);
@@ -281,58 +279,39 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
-				score+=50;
-        playMerge();
+				gatherPoints(verified);
+                playMerge();
 			}
 
 			//check column 1
 			//---------------------------FROM THERE THE ITEMS IN THE ARRAY IS NOT FROM A LANE, BUT FROM A COLUMN---------------------------
+			
 			fillWorkColumn(pos[1]); // <------------------------pos[1]
-			third = checkLane(workArray, fruitType1);
-			if(third == 1)
-			{
-				//do smthing with the items
-				changeToEmptyColumn(pos[1], verified);
-				score+=50;
-				playMerge();
-			}
-
-			fourth = checkLane(workArray, fruitType2);
-			if(fourth == 1)
-			{
-				//do smthing with the items
-				changeToEmptyColumn(pos[1], verified);
-				score+=50;
-        playMerge();
-			}
-			//check column 2
+		    third = checkLane(workArray, fruitType1);
+		    if(third == 1)
+		    {
+		    	//do smthing with the items
+		    	changeToEmptyColumn(pos[1], verified);
+		    	gatherPoints(verified);
+		    	playMerge();
+		    }
+				
 			fillWorkColumn(pos[3]);// <------------------------pos[3]
-			fifth = checkLane(workArray, fruitType1);
-			if(fifth == 1)
-			{
-				//do smthing with the items
-				changeToEmptyColumn(pos[3], verified);
-				console.log("FOUND5");
-				score+=50;
-        playMerge();
-			}
-
-			sixth = checkLane(workArray, fruitType2);
-			if(sixth == 1)
-			{
-				//do smthing with the items
-				changeToEmptyColumn(pos[3], verified);
-				console.log("FOUND6");
-				score+=50;
-        playMerge();
-			}
-			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
+			fourth = checkLane(workArray, fruitType2);
+		    if(fourth == 1)
+		    {
+		    	//do smthing with the items
+		    	changeToEmptyColumn(pos[3], verified);
+		    	gatherPoints(verified);
+                playMerge();
+		    }
+		
+			if(first == 0 && second == 0 && third == 0 && fourth == 0)
 			{
 				console.log("NOTHIN FOUND");
 				changePos();
-        playError();
+                playError();
 			}
-
 
 			idTemp = new Array();
 			pos.length = 0;
@@ -347,69 +326,49 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyRow(pos[0], verified);
-				console.log("FOUND1");
-        playMerge();
+				gatherPoints(verified);
+                playMerge();
 			}
 
+
+			fillWorkLane(pos[2]);// <------------------------pos[2]
 			second = checkLane(workArray, fruitType2);
 			if(second == 1)
 			{
 				//do smthing with the items
-				changeToEmptyRow(pos[0], verified);
-				console.log("FOUND2");
-				score+=50;
-        playMerge();
+				changeToEmptyRow(pos[2], verified);
+				console.log("FOUND4");
+				gatherPoints(verified);
+                playMerge();
 			}
 
-			fillWorkLane(pos[2]);// <------------------------pos[2]
-
+			//check column
+			//---------------------------FROM THERE THE ITEMS IN THE ARRAY IS NOT FROM A LANE, BUT FROM A COLUMN---------------------------
+			fillWorkColumn(pos[1]);// <------------------------pos[1]
 			third = checkLane(workArray, fruitType1);
 			if(third == 1)
 			{
 				//do smthing with the items
-				changeToEmptyRow(pos[2], verified);
-				score+=50;
-				console.log("FOUND3");
-        playMerge();
+				changeToEmptyColumn(pos[1], verified);
+				console.log("FOUND5");
+				gatherPoints(verified);
+                playMerge();
 			}
 
 			fourth = checkLane(workArray, fruitType2);
 			if(fourth == 1)
 			{
 				//do smthing with the items
-				changeToEmptyRow(pos[2], verified);
-				console.log("FOUND4");
-				score+=50;
-        playMerge();
-			}
-
-			//check column
-			//---------------------------FROM THERE THE ITEMS IN THE ARRAY IS NOT FROM A LANE, BUT FROM A COLUMN---------------------------
-			fillWorkColumn(pos[1]);// <------------------------pos[1]
-
-			fifth = checkLane(workArray, fruitType1);
-			if(fifth == 1)
-			{
-				//do smthing with the items
-				changeToEmptyColumn(pos[1], verified);
-				console.log("FOUND5");
-				score+=50;
-        playMerge();
-			}
-
-			sixth = checkLane(workArray, fruitType2);
-			if(sixth == 1)
-			{
-				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND6");
-        playMerge();
+				gatherPoints(verified);
+                playMerge();
 			}
-			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
+			if(first == 0 && second == 0 && third == 0 && fourth == 0)
 			{
 				console.log("NOTHIN FOUND");
 				changePos();
-        playError();
+                playError();
 			}
 
 			idTemp = new Array();
@@ -417,8 +376,19 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 		}
 		document.getElementById("scoreMain").innerHTML = score;
 		document.getElementById("gameOverScore").innerHTML = score;
-		setTimeout(moveBlocks, 250);
+		setTimeout(moveBlocks, 210);
 
+}
+
+function gatherPoints(array)
+{
+	for(let i = 0; i<=7; i++)
+	{
+		if(array[i] == 1)
+		{
+			score += array[i]*10;
+		}
+	}
 }
 
 
