@@ -121,7 +121,7 @@ function replay() {
 
   let name=document.getElementById('nickname').value;
   if(name == ""){
-  alert("You must enter player name");
+  document.getElementById("ErrorBox").innerHTML="You must enter player name";
         return false;
   }
   else

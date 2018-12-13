@@ -123,7 +123,7 @@ td {
 	
 white-space: nowrap;
 border-radius:20px;
-border:3px solid rgba(94, 77, 54, 0.8);
+border:3px solid rgba(94, 77, 54, 0.5);
   
 }
 
@@ -134,7 +134,9 @@ background-color:rgba(204,204,204,0.3);
 }
 
 td:active {     
-    background-color:rgba(94, 77, 54, 1);   
+
+background-color:#77c15b;
+
 }
 
 
@@ -494,5 +496,20 @@ color:#748431;
 	
 }
 
+
+#ErrorBox {
+	
+text-align:center;
+font-size: 25px;
+color:rgba(215,23,2,1);
+animation: blinker 2s linear infinite;
+	
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 
 

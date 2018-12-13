@@ -151,7 +151,8 @@
                  <div id="gameOverTitle">Game Over</div>
                  <!-- Rules content -->
                  <div id="gameOverContent">
-                 <input type="text" class="nickname" id="nickname" name="nickname" placeholder="Enter your name">
+                 <input type="text" class="nickname" id="nickname" name="nickname" placeholder="Enter your name" maxlength="10">
+                 <div id="ErrorBox"></div>
                  <div id="scoreTitle">Your Score:</div>
                  <div id="gameOverScore"></div>
                  <button type="submit" id="replayButton" onclick="replay()">Play Again</button>
