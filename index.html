@@ -2,17 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
+<!-- Meta Tags -->
+<meta name="description" content="Jungle Crush is match-three puzzle game">
+<meta name="keywords" content="jungle,crush,3 match,game,puzzle,candy">
+<meta name="author" content="Tomáš Varga,Daniel Lénárt,Adam Ivan,Ján Pavúk">
 <title>Jungle Crush</title>
 <!-- Favicon -->
 <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-<!-- CSS prepojenie-->
+<!-- CSS -->
 <link rel="stylesheet" href="css/styleIndex.css" type="text/css">
-<!-- jQuery prepojenie-->
+<!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- JS prepojenie-->
+<!-- JS -->
 <script type="text/javascript" src="js/styleScript.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </head>
+<<br>
+<!-- Load functions -->
 <script>
     var start = function(){
         modal();
@@ -20,15 +26,18 @@
     }
 </script>
 <body onLoad="start()">
+<!-- Audio source for background music -->
 	<audio id="song">
 	  <source src="jungle.mp3"type="audio/mp3">
 	  Your browser does not support the audio element.
 	</audio>
 <div id="WrapperCenter">
-
+	
+    <!-- Div for Logo -->
 	<div id="mainLogo">
 	</div>
 
+	 <!-- Div for buttons -->
 	<div id="buttonsCenter">
 
         <div id="buttonsWrapper">
@@ -51,16 +60,16 @@
         <div id="rulesWrapper">
 
             <div class="imgWrapper">
-
+				<!-- Div for tutorial image -->
                 <div class="tutorialHand"></div>
 
             </div>
+            <!-- Div for rules text -->
             <div class="textWrapper">
                 The player's objective is to match minimally 3 same symbols, for every successfull match the player gains score.<br>
                 The player have 3 minutes to get as much score as he can.<br>
                 Users can compete who gains more score under 3 minutes.
             </div>
-           <!-- <div class="textWrapper"></div>-->
 
         </div>
       </div>
@@ -70,11 +79,12 @@
     <!-- The Modal Score -->
     <div id="scoreModal" class="modalBkg">
 
-
+	 <!-- The Score content -->
       <div class="modal-content2">
         <span class="close2">×</span>
 
         <h1>Top score</h1>
+        <!-- Table for score -->
         <table>
 
         <tr>
@@ -151,9 +161,11 @@
 
 </div>
 
+</body>
+
+<!-- Footer -->
 <footer class="footer">
-    dadad
+   &copy;Tomáš Varga, Daniel Lénárt, Adam Ivan, Ján Pavúk
 </footer>
 
-</body>
 </html>

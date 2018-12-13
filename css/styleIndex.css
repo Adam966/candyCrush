@@ -1,5 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body,html {
 
@@ -143,7 +144,7 @@ background-color: rgba(0,0,0,0.4);
 
 .modal-content {
 	
-background-color: #A8C45C;
+background-color: #A6BC57;
 border:1px solid #888;
 width:750px;
 height:550px;
@@ -157,7 +158,7 @@ border:none;
 
 .modal-content2 {
 	
-background-color: #A8C45C;
+background-color: #A6BC57;
 padding:20px;
 border:1px solid #888;
 width:750px;
@@ -313,4 +314,16 @@ animation-iteration-count:infinite;
   0%   {left:0px; top:0px;}
   25%  {left:90px; top:0px;}
   50%  {left:0px; top:0;}
+}
+
+.footer {
+	
+position:absolute; 
+bottom:0; 
+width:100%; 
+text-align:center;
+font-family:Roboto;
+color:rgba(255,255,255,0.5);
+font-size:17px;
+
 }

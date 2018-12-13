@@ -359,7 +359,7 @@ color:white;
 
 #gameOverContent {
 	
-background-color: #A8C45C;
+background-color: #A6BC57;
 width:100%;
 height:80%;
 margin: auto;
@@ -510,6 +510,17 @@ animation: blinker 2s linear infinite;
   50% {
     opacity: 0;
   }
+}
+
+
+@media screen and (max-height: 768px) {
+ 
+table {
+	
+margin-top:55px;	
+	
+}
+ 
 }
 
 
