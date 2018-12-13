@@ -147,7 +147,6 @@ function timer() {
 	 /* let filterBlur='blur(5px)';
 	  $("body").css('filter',filterBlur);*/
 	  console.log("test");
-    document.getElementById('scoreTitle').innerHTML = score;
     }
     else {
       width-=0.0030;
