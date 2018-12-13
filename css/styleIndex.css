@@ -283,12 +283,33 @@ color:white;
 	
 }
 
+.tutorialHand {
 
-/*
-.tutorial {
+width:100px;
+height:100px;
+background:url(../img/pointer.png) center / contain no-repeat;
+margin:auto;
+margin-top:120px;
+position: relative;
+-webkit-animation-name: tutorial; /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+animation-name: tutorial;
+animation-duration: 3s;
+animation-iteration-count:infinite;
 
-width:392px;
-height:319px;
-	
-}*/
+}
 
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes tutorial {
+  0%   {left:0px; top:0px;}
+  25%  {left:90px; top:0px;}
+  50%  {left:0px; top:0;}
+
+}
+
+/* Standard syntax */
+@keyframes tutorial {
+  0%   {left:0px; top:0px;}
+  25%  {left:90px; top:0px;}
+  50%  {left:0px; top:0;}
+}

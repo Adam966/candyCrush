@@ -242,7 +242,9 @@ let fruitType2=0; //Stores number of the fruit(second block selected by the user
 
 //get position of clicked element on board
 function getPos(x, y, id) {
+
   if (pos.length < 4) {
+  	//$(id).css({"background-color": "red"});
     pos.push(x);
     pos.push(y);
 	idTemp.push(id);
@@ -657,3 +659,5 @@ function resetVerified()
 		verified[i] = 0;
     }
 }
+
+      
