@@ -149,7 +149,7 @@ function timer() {
 	  console.log("test");
     }
     else {
-      width-=0.0030;
+      width-=0.0028;
       time.style.width = width + '%';
     }
   }
@@ -290,7 +290,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
-				score+=3;
+				score+=50;
         playMerge();
 			}
 
@@ -302,7 +302,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
-				score+=3;
+				score+=50;
 				playMerge();
 			}
 
@@ -311,7 +311,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
-				score+=3;
+				score+=50;
         playMerge();
 			}
 			//check column 2
@@ -322,7 +322,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND5");
-				score+=3;
+				score+=50;
         playMerge();
 			}
 
@@ -332,7 +332,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[3], verified);
 				console.log("FOUND6");
-				score+=3;
+				score+=50;
         playMerge();
 			}
 			if(first == 0 && second == 0 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)
@@ -366,7 +366,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyRow(pos[0], verified);
 				console.log("FOUND2");
-				score+=3;
+				score+=50;
         playMerge();
 			}
 
@@ -377,7 +377,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 			{
 				//do smthing with the items
 				changeToEmptyRow(pos[2], verified);
-				score+=3;
+				score+=50;
 				console.log("FOUND3");
         playMerge();
 			}
@@ -388,7 +388,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyRow(pos[2], verified);
 				console.log("FOUND4");
-				score+=3;
+				score+=50;
         playMerge();
 			}
 
@@ -402,7 +402,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 				//do smthing with the items
 				changeToEmptyColumn(pos[1], verified);
 				console.log("FOUND5");
-				score+=3;
+				score+=50;
         playMerge();
 			}
 
