@@ -57,17 +57,6 @@ var refreshScoreTable = function(){
 	//score of the Tenth player with the highest score
 	}
 }
-//Chrome music
-var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    if(!isChrome){
-      $('#audio').remove();
-			console.log("remove audio");
-    }
-  else{
-     $('#song').remove(); //just to make sure that it will not have 2x audio in the background
-		 console.log("remove iframe");
-}
-
 
 let pos = new Array();
 let idTemp = new Array();
@@ -659,5 +648,3 @@ function resetVerified()
 		verified[i] = 0;
     }
 }
-
-      
