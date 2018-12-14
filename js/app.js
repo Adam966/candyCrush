@@ -166,12 +166,12 @@ function checkAudio() {
   if (!music) {
     song.play();
     music=true;
- 	$("#soundButton").css("background-image", "url('img/soundOn.png')");
+ 	$("#soundButton").css("background-image", "url(http://itsovy.sk/1n/ivana/JungleCrush/img/soundON.png)");
   }
   else {
     song.pause();
     music=false;
-	$("#soundButton").css("background-image", "url('img/soundOff.png')");
+	$("#soundButton").css("background-image", "url(http://itsovy.sk/1n/ivana/JungleCrush/img/soundOFF.png)");
   }
 }
 
