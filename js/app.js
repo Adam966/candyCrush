@@ -145,15 +145,19 @@ function timer() {
 }
 
 function playError() {
-  let error = document.getElementById('error')
-  error.play();
-  console.log("Error");
+	if (music==true) {
+		let error = document.getElementById('error')
+	  error.play();
+	  console.log("Error");
+	}
 }
 
 function playMerge() {
-  let merge = document.getElementById('merge')
-  merge.play();
-  console.log("Merge");
+	if (music==true) {
+		let merge = document.getElementById('merge')
+	  merge.play();
+	  console.log("Merge");
+	}
 }
 //on/off audio
 function checkAudio() {
@@ -259,7 +263,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 		let second = 0;
         let third = 0;
         let fourth = 0;
-		
+
 		if(pos[0] == pos[2])
 		{
 			fillWorkLane(pos[0]);
@@ -285,7 +289,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 
 			//check column 1
 			//---------------------------FROM THERE THE ITEMS IN THE ARRAY IS NOT FROM A LANE, BUT FROM A COLUMN---------------------------
-			
+
 			fillWorkColumn(pos[1]); // <------------------------pos[1]
 		    third = checkLane(workArray, fruitType1);
 		    if(third == 1)
@@ -295,7 +299,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 		    	gatherPoints(verified);
 		    	playMerge();
 		    }
-				
+
 			fillWorkColumn(pos[3]);// <------------------------pos[3]
 			fourth = checkLane(workArray, fruitType2);
 		    if(fourth == 1)
@@ -305,7 +309,7 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 		    	gatherPoints(verified);
                 playMerge();
 		    }
-		
+
 			if(first == 0 && second == 0 && third == 0 && fourth == 0)
 			{
 				console.log("NOTHIN FOUND");
