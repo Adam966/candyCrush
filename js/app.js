@@ -6,55 +6,15 @@
 var scoreTable = [];
 var refreshScoreTable = function(){
 	sortScoreTable();
-	if(scoreTable[0] != undefined ){
-		$("#1name").text(scoreTable[0].name);
-		$("#1score").text(scoreTable[0].score);
+	
+	for(let i =0; i<10; i++)
+	{
+		if(scoreTable[i] != undefined )
+		{
+		$("#" + (i+1) + "name").text(scoreTable[i].name);
+		$("#" + (i+1) + "score").text(scoreTable[i].score);
 		//score of the First player with the highest score
-	}
-	if(scoreTable[1] != undefined ){
-		$("#2name").text(scoreTable[1].name);
-		$("#2score").text(scoreTable[1].score);
-		//score of the Second player with the highest score
-	}
-	if(scoreTable[2] != undefined ){
-	$("#3name").text(scoreTable[2].name);
-	$("#3score").text(scoreTable[2].score);
-    //score of the Third player with the highest score
-    }
-    if(scoreTable[3] != undefined ){
-	$("#4name").text(scoreTable[3].name);
-	$("#4score").text(scoreTable[3].score);
-	//score of the Fourth player with the highest score
-	}
-	if(scoreTable[4] != undefined ){
-	$("#5name").text(scoreTable[4].name);
-	$("#5score").text(scoreTable[4].score);
-	//score of the Fifth player with the highest score
-	}
-	if(scoreTable[5] != undefined ){
-	$("#6name").text(scoreTable[5].name);
-	$("#6score").text(scoreTable[5].score);
-	//score of the Sixth player with the highest score
-	}
-	if(scoreTable[6] != undefined ){
-	$("#7name").text(scoreTable[6].name);
-	$("#7score").text(scoreTable[6].score);
-	//score of the Seventh player with the highest score
-	}
-	if(scoreTable[7] != undefined ){
-	$("#8name").text(scoreTable[7].name);
-	$("#8score").text(scoreTable[7].score);
-	//score of the Eight player with the highest score
-	}
-	if(scoreTable[8] != undefined ){
-	$("#9name").text(scoreTable[8].name);
-	$("#9score").text(scoreTable[8].score);
-	//score of the Ninth player with the highest score
-	}
-	if(scoreTable[9] != undefined ){
-	$("#10name").text(scoreTable[9].name);
-	$("#10score").text(scoreTable[9].score);
-	//score of the Tenth player with the highest score
+	    }
 	}
 }
 
@@ -380,7 +340,8 @@ function verify() //Verifies columns, lanes, stores found values in verified -ar
 		}
 		document.getElementById("scoreMain").innerHTML = score;
 		document.getElementById("gameOverScore").innerHTML = score;
-		setTimeout(moveBlocks, 210);
+		setTimeout(moveBlocks, 180);
+		setTimeout(moveBlocks, 200);
 
 }
 
@@ -432,7 +393,6 @@ function moveBlocks()
 	console.log("moveBlocks STARTED");
 	for(let i=0; i<8; i++)
 	{
-		tempArray = [0,0,0,0,0,0,0,0];
 		count=0;
 		last=15;
 
@@ -443,7 +403,6 @@ function moveBlocks()
 			if(workArray[j] == "img/empty.png")
 			{
 				count++;
-				tempArray[j] = 1;
 				if(last == 15){last = j;}
 		    }
 		}
@@ -466,7 +425,6 @@ function moveBlocks()
 	    	}
 	    }
 		pos = i;
-		moveIt(pos, count, i);
 		moveIt(pos, count, i);
 	}
 
